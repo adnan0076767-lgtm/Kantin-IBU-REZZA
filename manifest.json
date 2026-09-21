@@ -1,24 +1,18 @@
 {
   "name": "Kantin Sehat Ibu Rezza",
   "short_name": "Kantin Ibu Rezza",
-  "description": "Kantin Sehat Ibu Rezza di lingkungan SDN Sukasari.",
+  "description": "Kantin Sehat Ibu Rezza SDN Sukasari",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#f4fff7",
+  "background_color": "#ffffff",
   "theme_color": "#16803c",
-  "lang": "id-ID",
+  "lang": "id",
   "icons": [
     {
-      "src": "LOGO-PREVIEW-KANTIN.jpg",
-      "sizes": "512x512",
-      "type": "image/jpeg",
-      "purpose": "any"
-    },
-    {
-      "src": "LOGO-PREVIEW-KANTIN.jpg",
-      "sizes": "192x192",
+      "src": "./LOGO-PREVIEW-KANTIN.jpg",
+      "sizes": "1200x630",
       "type": "image/jpeg",
       "purpose": "any"
     }
