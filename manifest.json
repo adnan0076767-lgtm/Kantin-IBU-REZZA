@@ -6,10 +6,21 @@
   "start_url": "/Kantin-IBU-REZZA/",
   "scope": "/Kantin-IBU-REZZA/",
   "display": "standalone",
+  "display_override": [
+    "standalone",
+    "browser"
+  ],
   "orientation": "portrait",
   "background_color": "#ffffff",
   "theme_color": "#16803c",
   "lang": "id",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "categories": [
+    "food",
+    "shopping",
+    "lifestyle"
+  ],
   "icons": [
     {
       "src": "/Kantin-IBU-REZZA/icon-192.png",
