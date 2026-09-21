@@ -1,9 +1,13 @@
-const CACHE_NAME = "kantin-ibu-rezza-v2";
+```javascript
+const CACHE_NAME = "kantin-ibu-rezza-v3";
 
 const FILES_TO_CACHE = [
   "./",
   "./index.html",
   "./manifest.json",
+
+  "./icon-192.png",
+  "./icon-512.png",
 
   "./LOGO-PREVIEW-KANTIN.jpg",
 
@@ -14,6 +18,11 @@ const FILES_TO_CACHE = [
   "./ANEKA-GORENGAN.jpg",
   "./ANEKA-MINUMAN.jpg"
 ];
+
+
+/* =========================
+   INSTALL
+========================= */
 
 self.addEventListener("install", event => {
 
@@ -31,8 +40,13 @@ self.addEventListener("install", event => {
   );
 
   self.skipWaiting();
+
 });
 
+
+/* =========================
+   ACTIVATE
+========================= */
 
 self.addEventListener("activate", event => {
 
@@ -44,8 +58,12 @@ self.addEventListener("activate", event => {
         return Promise.all(
 
           keys
-            .filter(key => key !== CACHE_NAME)
-            .map(key => caches.delete(key))
+            .filter(
+              key => key !== CACHE_NAME
+            )
+            .map(
+              key => caches.delete(key)
+            )
 
         );
 
@@ -54,8 +72,13 @@ self.addEventListener("activate", event => {
   );
 
   self.clients.claim();
+
 });
 
+
+/* =========================
+   FETCH
+========================= */
 
 self.addEventListener("fetch", event => {
 
@@ -72,6 +95,7 @@ self.addEventListener("fetch", event => {
           return cachedResponse;
         }
 
+
         return fetch(event.request)
           .then(networkResponse => {
 
@@ -80,22 +104,31 @@ self.addEventListener("fetch", event => {
               networkResponse.status !== 200 ||
               networkResponse.type === "opaque"
             ){
+
               return networkResponse;
+
             }
+
 
             const cloned =
               networkResponse.clone();
 
+
             caches.open(CACHE_NAME)
               .then(cache => {
+
                 cache.put(
                   event.request,
                   cloned
                 );
+
               });
 
+
             return networkResponse;
+
           })
+
           .catch(() => {
 
             return caches.match(
@@ -107,4 +140,6 @@ self.addEventListener("fetch", event => {
       })
 
   );
+
 });
+```
