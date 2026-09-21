@@ -2,17 +2,23 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#16803c">
+<meta name="description" content="Kantin Sehat Ibu Rezza - Jajanan dan minuman untuk keluarga besar SDN Sukasari, Jl. Galanggang RT 02 RW 16, Desa Galanggang, Batujajar, Kabupaten Bandung Barat, Jawa Barat 40561.">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Kantin Ibu Rezza">
 
-<title>Kantin Sehat Ibu Rezza | Jajanan Sehat SDN Sukasari</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="LOGO-PREVIEW-KANTIN.jpg">
+<link rel="apple-touch-icon" href="LOGO-PREVIEW-KANTIN.jpg">
 
-<meta name="description" content="Kantin Sehat Ibu Rezza di SDN Sukasari, Jl. Galanggang RT 02 RW 16, Desa Galanggang, Batujajar, Kabupaten Bandung Barat, menyediakan Risol Mayo, Baso Gemoy, Seblak, aneka jajanan, gorengan dan minuman.">
-
-<meta name="theme-color" content="#16a34a">
-
-<meta property="og:title" content="Kantin Sehat Ibu Rezza">
-<meta property="og:description" content="Jajanan enak, sehat dan ramah anak di SDN Sukasari.">
+<meta property="og:title" content="Kantin Sehat Ibu Rezza | SDN Sukasari">
+<meta property="og:description" content="Risol Mayo, Baso Gemoy, Seblak, aneka jajanan, gorengan dan minuman.">
 <meta property="og:image" content="LOGO-PREVIEW-KANTIN.jpg">
+
+<title>Kantin Sehat Ibu Rezza | SDN Sukasari</title>
 
 <style>
 *{
@@ -27,28 +33,45 @@ html{
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:#f0fdf4;
-  color:#16351f;
+  background:#f4fff7;
+  color:#173b27;
   line-height:1.6;
 }
 
 a{
-  text-decoration:none;
   color:inherit;
+  text-decoration:none;
+}
+
+img{
+  max-width:100%;
+  display:block;
 }
 
 button{
-  font-family:inherit;
+  font:inherit;
 }
 
-/* TOP BAR */
+:root{
+  --green:#16803c;
+  --green-dark:#075c2b;
+  --green-light:#dff8e7;
+  --yellow:#ffc928;
+  --orange:#f28c28;
+  --red:#e53935;
+  --white:#fff;
+  --dark:#123522;
+  --shadow:0 12px 30px rgba(15,90,43,.12);
+}
+
+/* TOP */
 .topbar{
-  background:#166534;
-  color:#fff;
+  background:var(--green-dark);
+  color:white;
   text-align:center;
-  padding:9px 15px;
+  padding:8px 15px;
   font-size:13px;
-  font-weight:800;
+  font-weight:700;
 }
 
 /* NAV */
@@ -57,9 +80,9 @@ nav{
   top:0;
   z-index:1000;
   background:rgba(255,255,255,.96);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid #bbf7d0;
-  box-shadow:0 4px 20px rgba(22,101,52,.08);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #d9f0df;
+  box-shadow:0 4px 18px rgba(0,0,0,.06);
 }
 
 .nav-inner{
@@ -77,159 +100,130 @@ nav{
   align-items:center;
   gap:10px;
   font-weight:900;
-  color:#166534;
+  color:var(--green-dark);
 }
 
 .brand img{
-  width:48px;
-  height:48px;
-  border-radius:50%;
+  width:46px;
+  height:46px;
+  border-radius:12px;
   object-fit:cover;
-  border:3px solid #22c55e;
-  background:#fff;
-}
-
-.brand-text{
-  line-height:1.1;
+  border:2px solid var(--green-light);
 }
 
 .brand-text small{
   display:block;
   font-size:10px;
-  color:#64748b;
-  margin-top:4px;
+  color:#66806e;
+  letter-spacing:.5px;
 }
 
 .nav-links{
   display:flex;
-  gap:20px;
-  font-size:14px;
-  font-weight:800;
+  align-items:center;
+  gap:7px;
+  flex-wrap:wrap;
+}
+
+.nav-links a{
+  padding:8px 11px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:700;
 }
 
 .nav-links a:hover{
-  color:#16a34a;
+  background:var(--green-light);
+  color:var(--green-dark);
 }
 
-@media(max-width:750px){
-  .nav-links{
-    display:none;
-  }
+.install-btn{
+  border:0;
+  background:var(--green);
+  color:#fff;
+  padding:9px 13px;
+  border-radius:11px;
+  cursor:pointer;
+  font-weight:800;
+  box-shadow:0 5px 15px rgba(22,128,60,.22);
+}
+
+.install-btn:hover{
+  background:var(--green-dark);
 }
 
 /* HERO */
 .hero{
-  min-height:650px;
-  display:flex;
-  align-items:center;
-  position:relative;
-  overflow:hidden;
-  background:
-    linear-gradient(rgba(240,253,244,.91),rgba(220,252,231,.94)),
-    url("LOGO-PREVIEW-KANTIN.jpg") center/cover;
-}
-
-.hero:before,
-.hero:after{
-  content:"";
-  position:absolute;
-  border-radius:50%;
-  filter:blur(5px);
-  opacity:.45;
-}
-
-.hero:before{
-  width:330px;
-  height:330px;
-  background:#86efac;
-  top:-130px;
-  left:-80px;
-}
-
-.hero:after{
-  width:380px;
-  height:380px;
-  background:#fde68a;
-  bottom:-180px;
-  right:-80px;
-}
-
-.hero-inner{
-  width:100%;
   max-width:1150px;
-  margin:auto;
-  padding:65px 18px;
+  margin:25px auto 0;
+  padding:25px 18px 10px;
+}
+
+.hero-card{
+  min-height:470px;
+  border-radius:30px;
+  overflow:hidden;
+  position:relative;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  background:
+    radial-gradient(circle at 85% 20%,rgba(255,201,40,.3),transparent 25%),
+    linear-gradient(135deg,#075c2b,#16803c 55%,#49a95f);
+  box-shadow:var(--shadow);
+  color:#fff;
+}
+
+.hero-content{
+  padding:60px 45px;
   position:relative;
   z-index:2;
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:35px;
-  align-items:center;
-}
-
-@media(max-width:850px){
-  .hero-inner{
-    grid-template-columns:1fr;
-    text-align:center;
-  }
 }
 
 .badge{
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
+  display:inline-block;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.3);
   padding:8px 13px;
-  border-radius:999px;
-  background:#fff;
-  color:#166534;
-  border:1px solid #86efac;
+  border-radius:30px;
+  font-size:12px;
   font-weight:800;
-  font-size:13px;
-  box-shadow:0 8px 25px rgba(22,101,52,.08);
-  margin-bottom:18px;
+  margin-bottom:16px;
 }
 
 .hero h1{
-  font-size:clamp(38px,6vw,72px);
+  font-size:clamp(36px,6vw,64px);
   line-height:1.02;
-  color:#14532d;
+  margin-bottom:18px;
   letter-spacing:-2px;
 }
 
 .hero h1 span{
-  color:#16a34a;
+  color:#ffe16b;
 }
 
 .hero p{
-  margin-top:20px;
-  max-width:680px;
-  font-size:18px;
-  color:#365a43;
+  max-width:610px;
+  font-size:16px;
+  color:#edfff2;
+  margin-bottom:25px;
 }
 
 .hero-buttons{
   display:flex;
-  gap:12px;
-  margin-top:28px;
+  gap:10px;
   flex-wrap:wrap;
 }
 
-@media(max-width:850px){
-  .hero-buttons{
-    justify-content:center;
-  }
-}
-
 .btn{
-  border:none;
-  border-radius:14px;
-  padding:14px 20px;
-  font-weight:900;
-  cursor:pointer;
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:9px;
+  gap:8px;
+  border:0;
+  border-radius:13px;
+  padding:13px 17px;
+  font-weight:900;
+  cursor:pointer;
   transition:.2s;
 }
 
@@ -237,194 +231,175 @@ nav{
   transform:translateY(-2px);
 }
 
-.btn-wa{
-  background:#25D366;
-  color:#fff;
-  box-shadow:0 10px 25px rgba(37,211,102,.25);
+.btn-yellow{
+  background:var(--yellow);
+  color:#4b3700;
 }
 
-.btn-main{
-  background:#166534;
-  color:#fff;
-}
-
-.btn-light{
+.btn-white{
   background:#fff;
-  color:#166534;
-  border:1px solid #bbf7d0;
+  color:var(--green-dark);
 }
 
-/* WHATSAPP ICON */
-.wa-icon{
-  width:22px;
-  height:22px;
-  display:inline-block;
+.btn-tiktok{
+  background:#111;
+  color:#fff;
 }
 
-/* HERO CARD */
-.hero-card{
-  background:rgba(255,255,255,.88);
-  border:1px solid #bbf7d0;
-  border-radius:28px;
-  padding:18px;
-  box-shadow:0 25px 60px rgba(22,101,52,.15);
-  transform:rotate(2deg);
+.hero-image{
+  min-height:470px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px;
+  position:relative;
 }
 
-.hero-card img{
-  width:100%;
-  height:370px;
+.hero-image::before{
+  content:"";
+  position:absolute;
+  width:350px;
+  height:350px;
+  border-radius:50%;
+  background:rgba(255,255,255,.1);
+}
+
+.hero-image img{
+  position:relative;
+  width:min(100%,400px);
+  max-height:390px;
   object-fit:cover;
-  border-radius:20px;
-  display:block;
-}
-
-@media(max-width:600px){
-  .hero-card img{
-    height:300px;
-  }
+  border-radius:25px;
+  border:7px solid rgba(255,255,255,.8);
+  box-shadow:0 25px 50px rgba(0,0,0,.2);
 }
 
 /* SECTIONS */
 section{
-  padding:75px 18px;
-}
-
-.container{
   max-width:1150px;
   margin:auto;
+  padding:65px 18px;
 }
 
 .section-head{
   text-align:center;
-  max-width:720px;
-  margin:0 auto 35px;
+  margin-bottom:30px;
+}
+
+.section-head .mini{
+  color:var(--green);
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:2px;
 }
 
 .section-head h2{
-  font-size:clamp(28px,4vw,44px);
-  color:#14532d;
-  margin-bottom:8px;
+  color:var(--green-dark);
+  font-size:clamp(28px,5vw,42px);
+  margin:5px 0;
 }
 
 .section-head p{
-  color:#64748b;
+  color:#688071;
 }
 
 /* SCHOOL */
-.school{
-  background:#fff;
-}
-
-.school-grid{
+.school-card{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:25px;
-}
-
-@media(max-width:800px){
-  .school-grid{
-    grid-template-columns:1fr;
-  }
+  gap:20px;
 }
 
 .info-card{
-  background:#f0fdf4;
-  border:1px solid #bbf7d0;
-  padding:28px;
+  background:#fff;
+  border:1px solid #dff0e3;
   border-radius:22px;
+  padding:25px;
+  box-shadow:var(--shadow);
 }
 
 .info-card h3{
-  color:#166534;
-  margin-bottom:10px;
+  color:var(--green-dark);
+  margin-bottom:12px;
 }
 
-.school-points{
-  display:grid;
-  gap:12px;
-  margin-top:20px;
+.info-card p{
+  color:#5c7163;
 }
 
-.point{
-  background:#fff;
-  border-radius:14px;
-  padding:13px;
-  border:1px solid #dcfce7;
+.address{
+  margin-top:15px;
+  padding:16px;
+  background:var(--green-light);
+  border-radius:15px;
   font-weight:700;
+  color:var(--green-dark);
 }
 
 /* MENU */
-.menu-section{
-  background:
-    radial-gradient(circle at top left,#dcfce7,transparent 35%),
-    #f0fdf4;
-}
-
 .menu-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:20px;
 }
 
-@media(max-width:950px){
-  .menu-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-@media(max-width:600px){
-  .menu-grid{
-    grid-template-columns:1fr;
-  }
-}
-
 .menu-card{
   background:#fff;
-  border:1px solid #dcfce7;
   border-radius:22px;
   overflow:hidden;
-  box-shadow:0 10px 30px rgba(22,101,52,.08);
-  transition:.2s;
+  border:1px solid #e0efe4;
+  box-shadow:var(--shadow);
+  transition:.25s;
 }
 
 .menu-card:hover{
   transform:translateY(-5px);
-  box-shadow:0 18px 35px rgba(22,101,52,.13);
+  box-shadow:0 18px 35px rgba(15,90,43,.16);
 }
 
-.menu-img{
-  width:100%;
+.menu-image{
   height:220px;
+  overflow:hidden;
+  background:#e9f8ed;
+}
+
+.menu-image img{
+  width:100%;
+  height:100%;
   object-fit:cover;
-  display:block;
-  background:#dcfce7;
+  transition:.3s;
+}
+
+.menu-card:hover .menu-image img{
+  transform:scale(1.05);
 }
 
 .menu-body{
   padding:18px;
 }
 
-.category{
+.menu-tag{
   display:inline-block;
-  font-size:11px;
+  font-size:10px;
   font-weight:900;
-  color:#166534;
-  background:#dcfce7;
-  padding:5px 9px;
-  border-radius:999px;
-  margin-bottom:9px;
+  color:var(--green);
+  background:var(--green-light);
+  border-radius:20px;
+  padding:5px 8px;
+  margin-bottom:8px;
 }
 
 .menu-body h3{
-  color:#14532d;
-  font-size:20px;
+  color:var(--dark);
+  font-size:21px;
+  margin-bottom:4px;
 }
 
 .menu-body p{
-  color:#64748b;
-  font-size:14px;
-  margin:5px 0 12px;
+  color:#6a7b70;
+  font-size:13px;
+  min-height:40px;
 }
 
 .menu-bottom{
@@ -432,196 +407,259 @@ section{
   align-items:center;
   justify-content:space-between;
   gap:10px;
+  margin-top:14px;
 }
 
 .price{
-  color:#16a34a;
-  font-size:20px;
+  color:var(--green-dark);
   font-weight:900;
+  font-size:17px;
 }
 
 .add-btn{
   border:0;
-  background:#166534;
+  background:var(--green);
   color:#fff;
-  padding:10px 13px;
   border-radius:11px;
+  padding:9px 12px;
+  font-weight:900;
   cursor:pointer;
-  font-weight:800;
 }
 
 .add-btn:hover{
-  background:#15803d;
+  background:var(--green-dark);
+}
+
+/* TIKTOK */
+.tiktok-section{
+  background:linear-gradient(135deg,#101010,#252525);
+  max-width:none;
+  color:#fff;
+}
+
+.tiktok-inner{
+  max-width:1150px;
+  margin:auto;
+  padding:0 18px;
+}
+
+.tiktok-box{
+  border:1px solid #444;
+  background:linear-gradient(145deg,#161616,#080808);
+  border-radius:28px;
+  padding:30px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:25px;
+  box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.tiktok-label{
+  display:inline-block;
+  background:#252525;
+  color:#ff4f81;
+  border:1px solid #444;
+  padding:7px 11px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:900;
+  margin-bottom:10px;
+}
+
+.tiktok-box h2{
+  font-size:clamp(27px,5vw,42px);
+  margin-bottom:8px;
+}
+
+.tiktok-box p{
+  color:#bbb;
+}
+
+.tiktok-handle{
+  color:#fff;
+  font-weight:900;
+  font-size:18px;
+  margin-top:10px;
+}
+
+.tiktok-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.tiktok-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  background:#fff;
+  color:#111;
+  border-radius:13px;
+  padding:13px 17px;
+  font-weight:900;
+}
+
+.tiktok-btn.dark{
+  background:#ff2d55;
+  color:#fff;
 }
 
 /* ABOUT */
-.about{
-  background:#fff;
-}
-
 .about-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:25px;
-  align-items:center;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
 }
 
-@media(max-width:800px){
-  .about-grid{
-    grid-template-columns:1fr;
-  }
+.about-card{
+  background:#fff;
+  border:1px solid #dfeee3;
+  border-radius:20px;
+  padding:25px;
+  box-shadow:var(--shadow);
 }
 
-.about-img{
-  width:100%;
-  border-radius:25px;
-  border:5px solid #dcfce7;
-  max-height:420px;
-  object-fit:cover;
-}
-
-.about h2{
-  font-size:38px;
-  color:#14532d;
+.about-icon{
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border-radius:15px;
+  background:var(--green-light);
+  font-size:24px;
   margin-bottom:15px;
 }
 
-.about p{
-  color:#52665a;
+.about-card h3{
+  color:var(--green-dark);
+  margin-bottom:6px;
+}
+
+.about-card p{
+  color:#6b7d70;
+  font-size:14px;
 }
 
 /* LOCATION */
-.location{
-  background:#ecfdf5;
-}
-
-.location-box{
+.location-card{
   background:#fff;
-  border:1px solid #bbf7d0;
   border-radius:25px;
-  padding:28px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:25px;
+  padding:30px;
+  border:1px solid #dfeee3;
+  box-shadow:var(--shadow);
+  text-align:center;
 }
 
-@media(max-width:800px){
-  .location-box{
-    grid-template-columns:1fr;
-  }
+.location-icon{
+  font-size:50px;
+  margin-bottom:10px;
 }
 
-.address{
-  font-size:17px;
+.location-card h2{
+  color:var(--green-dark);
+  margin-bottom:10px;
 }
 
-.address strong{
-  color:#14532d;
+.location-address{
+  max-width:650px;
+  margin:0 auto 20px;
+  color:#5f7265;
+  line-height:1.8;
 }
 
-.map{
-  min-height:280px;
-  border-radius:20px;
-  overflow:hidden;
-  background:#dcfce7;
-}
-
-.map iframe{
-  width:100%;
-  height:100%;
-  min-height:280px;
-  border:0;
+.location-note{
+  background:#fff8dc;
+  border:1px solid #f1dd85;
+  color:#705b00;
+  max-width:700px;
+  margin:0 auto 20px;
+  padding:12px 15px;
+  border-radius:13px;
+  font-size:13px;
 }
 
 /* CONTACT */
-.contact{
-  background:#14532d;
+.contact-box{
+  background:linear-gradient(135deg,#075c2b,#16803c);
   color:#fff;
-}
-
-.contact .section-head h2{
-  color:#fff;
-}
-
-.contact .section-head p{
-  color:#bbf7d0;
-}
-
-.contact-grid{
+  border-radius:27px;
+  padding:35px;
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
-  max-width:800px;
-  margin:auto;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:25px;
+  box-shadow:var(--shadow);
 }
 
-@media(max-width:650px){
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
+.contact-box h2{
+  font-size:35px;
+  margin-bottom:7px;
 }
 
-.contact-card{
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.14);
-  padding:22px;
-  border-radius:18px;
+.contact-box p{
+  color:#dcf8e5;
 }
 
-.contact-card small{
-  display:block;
-  color:#bbf7d0;
-  margin-bottom:4px;
+.contact-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
 }
 
-.contact-card strong{
-  font-size:17px;
+.contact-btn{
+  background:#fff;
+  color:var(--green-dark);
+  padding:13px 17px;
+  border-radius:13px;
+  font-weight:900;
 }
 
 /* CART */
 .cart-float{
   position:fixed;
-  right:18px;
-  bottom:18px;
-  z-index:2000;
+  right:20px;
+  bottom:20px;
+  z-index:1200;
   width:62px;
   height:62px;
-  border:0;
   border-radius:50%;
-  background:#166534;
+  border:0;
+  background:var(--green);
   color:#fff;
   cursor:pointer;
-  box-shadow:0 15px 35px rgba(0,0,0,.2);
+  box-shadow:0 12px 30px rgba(0,0,0,.25);
   font-size:25px;
 }
 
 .cart-count{
   position:absolute;
   top:-4px;
-  right:-4px;
+  right:-2px;
   min-width:23px;
   height:23px;
+  display:grid;
+  place-items:center;
+  background:var(--red);
   border-radius:50%;
-  background:#ef4444;
-  color:#fff;
-  font-size:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  font-size:11px;
   font-weight:900;
 }
 
 .cart-panel{
   position:fixed;
-  right:18px;
-  bottom:90px;
-  width:min(390px,calc(100vw - 36px));
+  right:20px;
+  bottom:92px;
+  z-index:1199;
+  width:min(390px,calc(100vw - 30px));
+  max-height:70vh;
+  overflow:auto;
   background:#fff;
-  border:1px solid #bbf7d0;
   border-radius:22px;
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
+  border:1px solid #dceee1;
   padding:20px;
-  z-index:1999;
-  box-shadow:0 20px 60px rgba(0,0,0,.2);
   display:none;
 }
 
@@ -629,84 +667,290 @@ section{
   display:block;
 }
 
-.cart-panel h3{
-  color:#14532d;
-  margin-bottom:12px;
+.cart-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
 }
 
-.cart-items{
-  max-height:270px;
-  overflow:auto;
+.cart-head h3{
+  color:var(--green-dark);
+}
+
+.close-cart{
+  border:0;
+  background:#edf5ef;
+  width:34px;
+  height:34px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.cart-empty{
+  text-align:center;
+  color:#738178;
+  padding:25px 5px;
 }
 
 .cart-item{
-  display:flex;
-  justify-content:space-between;
+  display:grid;
+  grid-template-columns:1fr auto;
   gap:10px;
-  border-bottom:1px solid #e2e8f0;
-  padding:10px 0;
+  padding:12px 0;
+  border-bottom:1px solid #edf1ee;
 }
 
-.cart-item small{
-  color:#64748b;
-}
-
-.cart-item button{
-  border:0;
-  background:#fee2e2;
-  color:#dc2626;
-  border-radius:8px;
-  padding:5px 8px;
-  cursor:pointer;
+.cart-item-name{
   font-weight:800;
+}
+
+.cart-item-price{
+  color:var(--green);
+  font-weight:900;
+  font-size:13px;
+}
+
+.qty{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin-top:7px;
+}
+
+.qty button{
+  border:0;
+  background:#eaf7ed;
+  color:var(--green-dark);
+  width:27px;
+  height:27px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:900;
 }
 
 .cart-total{
   display:flex;
   justify-content:space-between;
+  margin-top:15px;
+  padding-top:15px;
+  border-top:2px solid #dcece0;
   font-weight:900;
-  font-size:19px;
-  padding:15px 0;
+  color:var(--green-dark);
 }
 
 .checkout{
   width:100%;
+  margin-top:14px;
+  border:0;
+  background:#25d366;
+  color:#fff;
+  padding:13px;
+  border-radius:12px;
+  font-weight:900;
+  cursor:pointer;
 }
 
-.empty{
-  color:#64748b;
-  text-align:center;
-  padding:20px;
+/* INSTALL */
+.install-banner{
+  display:none;
+  position:fixed;
+  left:15px;
+  right:15px;
+  bottom:15px;
+  z-index:1300;
+  background:#fff;
+  border:1px solid #d8ebdd;
+  box-shadow:0 15px 45px rgba(0,0,0,.2);
+  border-radius:18px;
+  padding:15px;
+}
+
+.install-banner.show{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.install-banner strong{
+  display:block;
+  color:var(--green-dark);
+}
+
+.install-banner small{
+  color:#68776d;
+}
+
+.install-actions{
+  display:flex;
+  gap:7px;
+}
+
+.install-actions button{
+  border:0;
+  padding:9px 11px;
+  border-radius:9px;
+  cursor:pointer;
+  font-weight:800;
+}
+
+.install-now{
+  background:var(--green);
+  color:#fff;
+}
+
+.install-close{
+  background:#edf2ee;
+  color:#444;
+}
+
+/* TOAST */
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:92px;
+  transform:translate(-50%,20px);
+  opacity:0;
+  pointer-events:none;
+  background:#123522;
+  color:#fff;
+  padding:12px 17px;
+  border-radius:12px;
+  z-index:2000;
+  transition:.25s;
+  font-size:13px;
+  font-weight:800;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.toast.show{
+  opacity:1;
+  transform:translate(-50%,0);
 }
 
 /* FOOTER */
 footer{
-  background:#052e16;
-  color:#bbf7d0;
+  background:#07351b;
+  color:#d9f4e1;
+  padding:35px 18px;
   text-align:center;
-  padding:25px 18px;
-  font-size:13px;
 }
 
-/* NOTICE */
-.notice{
-  position:fixed;
-  left:50%;
-  bottom:25px;
-  transform:translate(-50%,120px);
-  background:#14532d;
+footer img{
+  width:60px;
+  height:60px;
+  object-fit:cover;
+  border-radius:15px;
+  margin:0 auto 10px;
+}
+
+footer strong{
   color:#fff;
-  padding:12px 18px;
-  border-radius:999px;
-  z-index:5000;
-  opacity:0;
-  transition:.3s;
-  box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
-.notice.show{
-  transform:translate(-50%,0);
-  opacity:1;
+footer p{
+  font-size:13px;
+  color:#afd1b9;
+}
+
+/* RESPONSIVE */
+@media(max-width:850px){
+  .nav-links{
+    display:none;
+  }
+
+  .hero-card{
+    grid-template-columns:1fr;
+  }
+
+  .hero-content{
+    padding:45px 25px 25px;
+  }
+
+  .hero-image{
+    min-height:300px;
+    padding:15px 25px 35px;
+  }
+
+  .hero-image img{
+    max-height:280px;
+  }
+
+  .menu-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .school-card,
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+
+  .tiktok-box,
+  .contact-box{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:560px){
+  .brand-text{
+    font-size:13px;
+  }
+
+  .brand img{
+    width:40px;
+    height:40px;
+  }
+
+  .install-btn{
+    padding:8px 10px;
+    font-size:11px;
+  }
+
+  .hero{
+    margin-top:10px;
+    padding-top:10px;
+  }
+
+  .hero-card{
+    border-radius:22px;
+  }
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  section{
+    padding:48px 15px;
+  }
+
+  .menu-grid{
+    grid-template-columns:1fr;
+  }
+
+  .menu-image{
+    height:230px;
+  }
+
+  .tiktok-box,
+  .contact-box{
+    padding:24px;
+    border-radius:21px;
+  }
+
+  .contact-box h2{
+    font-size:28px;
+  }
+
+  .cart-float{
+    right:15px;
+    bottom:15px;
+  }
+
+  .cart-panel{
+    right:15px;
+    bottom:88px;
+  }
 }
 </style>
 </head>
@@ -714,947 +958,796 @@ footer{
 <body>
 
 <div class="topbar">
-  🏫 KANTIN SEHAT • SDN SUKASARI • JAJANAN ENAK & RAMAH ANAK
+  🏫 KANTIN SEHAT IBU REZZA • SDN SUKASARI
 </div>
 
 <nav>
   <div class="nav-inner">
-
-    <a href="#home" class="brand">
+    <a href="#beranda" class="brand">
       <img src="LOGO-PREVIEW-KANTIN.jpg" alt="Logo Kantin Sehat Ibu Rezza">
       <div class="brand-text">
-        KANTIN SEHAT IBU REZZA
-        <small>SDN SUKASARI</small>
+        KANTIN IBU REZZA
+        <small>Jajanan Sehat SDN Sukasari</small>
       </div>
     </a>
 
     <div class="nav-links">
-      <a href="#home">Beranda</a>
       <a href="#menu">Menu</a>
+      <a href="#tiktok">TikTok</a>
       <a href="#tentang">Tentang</a>
       <a href="#lokasi">Lokasi</a>
       <a href="#kontak">Kontak</a>
     </div>
 
+    <button class="install-btn" id="installTop" style="display:none;">
+      📲 Install
+    </button>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-inner">
+<main>
 
-    <div>
-      <div class="badge">🌱 KANTIN SEHAT • SDN SUKASARI</div>
+<section class="hero" id="beranda">
+  <div class="hero-card">
+
+    <div class="hero-content">
+      <div class="badge">🍜 JAJANAN FAVORIT KELUARGA SEKOLAH</div>
 
       <h1>
-        Jajan Enak,<br>
-        <span>Sehat & Ceria!</span>
+        Kantin Sehat<br>
+        <span>Ibu Rezza</span>
       </h1>
 
       <p>
-        Selamat datang di Kantin Sehat Ibu Rezza.
-        Pilihan jajanan favorit anak sekolah mulai dari
-        Risol Mayo, Baso Gemoy, Seblak, Aneka Jajanan,
-        Gorengan sampai Aneka Minuman.
+        Tempat jajan favorit di lingkungan SDN Sukasari.
+        Ada Risol Mayo, Baso Gemoy, Seblak, aneka jajanan,
+        gorengan dan aneka minuman.
       </p>
 
       <div class="hero-buttons">
-
-        <a class="btn btn-wa"
-           href="https://wa.me/6283162813311?text=Halo%20Ibu%20Rezza%2C%20saya%20ingin%20pesan%20menu%20kantin."
-           target="_blank"
-           rel="noopener">
-
-          <svg class="wa-icon" viewBox="0 0 32 32" fill="none">
-            <path fill="white" d="M16 3.2A12.8 12.8 0 0 0 5.02 22.58L3.2 28.8l6.38-1.77A12.8 12.8 0 1 0 16 3.2Zm0 23.3c-2.01 0-3.87-.6-5.43-1.64l-.39-.25-3.79 1.05 1.01-3.69-.26-.4A10.48 10.48 0 1 1 16 26.5Z"/>
-            <path fill="white" d="M19.11 17.42c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.11 2.82c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.57.66.21 1.26.18 1.73.11.53-.08 1.6-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32Z"/>
-          </svg>
-
-          Pesan via WhatsApp
+        <a class="btn btn-yellow" href="#menu">
+          🍜 Lihat Menu
         </a>
 
-        <a class="btn btn-main" href="#menu">
-          🍱 Lihat Menu
-        </a>
-
-      </div>
-    </div>
-
-    <div class="hero-card">
-      <img src="RISOL-MAYO.jpg" alt="Risol Mayo Kantin Sehat Ibu Rezza">
-    </div>
-
-  </div>
-</section>
-
-<!-- SCHOOL -->
-<section class="school">
-  <div class="container">
-
-    <div class="section-head">
-      <h2>Teman Jajan Anak Sekolah</h2>
-      <p>
-        Kantin yang hadir untuk menemani waktu istirahat
-        dengan pilihan jajanan yang praktis dan menyenangkan.
-      </p>
-    </div>
-
-    <div class="school-grid">
-
-      <div class="info-card">
-        <h3>🏫 Kantin Sehat Ibu Rezza</h3>
-
-        <p>
-          Berada di lingkungan SDN Sukasari dan melayani
-          kebutuhan jajanan siswa, guru dan warga sekolah.
-        </p>
-
-        <div class="school-points">
-          <div class="point">🥗 Pilihan jajanan beragam</div>
-          <div class="point">🍽️ Cocok untuk waktu istirahat</div>
-          <div class="point">💚 Harga ramah kantong</div>
-          <div class="point">📱 Bisa pesan melalui WhatsApp</div>
-        </div>
-      </div>
-
-      <div class="info-card">
-        <h3>📍 Alamat Lengkap</h3>
-
-        <p>
-          <strong>SDN SUKASARI</strong><br>
-          Jl. Galanggang RT 02 RW 16<br>
-          Desa Galanggang, Batujajar<br>
-          Kabupaten Bandung Barat<br>
-          Kode Pos 40561
-        </p>
-
-        <div class="school-points">
-          <div class="point">🎒 Nuansa ramah anak sekolah</div>
-          <div class="point">🌱 Konsep kantin sehat</div>
-          <div class="point">😊 Jajan dengan ceria</div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- MENU -->
-<section class="menu-section" id="menu">
-
-  <div class="container">
-
-    <div class="section-head">
-      <h2>🍴 Menu Kantin</h2>
-      <p>
-        Pilih makanan dan minuman favoritmu,
-        masukkan ke keranjang lalu pesan melalui WhatsApp.
-      </p>
-    </div>
-
-    <div class="menu-grid">
-
-      <!-- 1 RISOL MAYO -->
-      <article class="menu-card">
-
-        <img class="menu-img"
-             src="RISOL-MAYO.jpg"
-             alt="Risol Mayo"
-             onerror="this.src='LOGO-PREVIEW-KANTIN.jpg'">
-
-        <div class="menu-body">
-          <span class="category">JAJANAN FAVORIT</span>
-
-          <h3>Risol Mayo</h3>
-
-          <p>
-            Risol gurih dengan isian creamy yang nikmat.
-          </p>
-
-          <div class="menu-bottom">
-            <span class="price">Rp3.000</span>
-
-            <button class="add-btn"
-                    onclick="addCart('Risol Mayo',3000)">
-              + Keranjang
-            </button>
-          </div>
-        </div>
-
-      </article>
-
-
-      <!-- 2 BASO GEMOY -->
-      <article class="menu-card">
-
-        <img class="menu-img"
-             src="BASO-GEMOY.jpg"
-             alt="Baso Gemoy"
-             onerror="this.src='LOGO-PREVIEW-KANTIN.jpg'">
-
-        <div class="menu-body">
-          <span class="category">FAVORIT ANAK</span>
-
-          <h3>Baso Gemoy</h3>
-
-          <p>
-            Baso kenyal dan gurih yang cocok untuk teman istirahat.
-          </p>
-
-          <div class="menu-bottom">
-            <span class="price">Rp5.000</span>
-
-            <button class="add-btn"
-                    onclick="addCart('Baso Gemoy',5000)">
-              + Keranjang
-            </button>
-          </div>
-        </div>
-
-      </article>
-
-
-      <!-- 3 SEBLAK -->
-      <article class="menu-card">
-
-        <img class="menu-img"
-             src="SEBLAK..jpg"
-             alt="Seblak"
-             onerror="this.src='LOGO-PREVIEW-KANTIN.jpg'">
-
-        <div class="menu-body">
-          <span class="category">PEDAS NIKMAT</span>
-
-          <h3>Seblak</h3>
-
-          <p>
-            Seblak gurih dengan cita rasa pedas yang menggugah selera.
-          </p>
-
-          <div class="menu-bottom">
-            <span class="price">Rp5.000</span>
-
-            <button class="add-btn"
-                    onclick="addCart('Seblak',5000)">
-              + Keranjang
-            </button>
-          </div>
-        </div>
-
-      </article>
-
-
-      <!-- 4 ANEKA JAJANAN -->
-      <article class="menu-card">
-
-        <img class="menu-img"
-             src="ANEKA-JAJANAN.jpg"
-             alt="Aneka Jajanan"
-             onerror="this.src='LOGO-PREVIEW-KANTIN.jpg'">
-
-        <div class="menu-body">
-          <span class="category">ANEKA PILIHAN</span>
-
-          <h3>Aneka Jajanan</h3>
-
-          <p>
-            Beragam jajanan favorit untuk menemani waktu istirahat.
-          </p>
-
-          <div class="menu-bottom">
-            <span class="price">Mulai Rp1.000</span>
-
-            <button class="add-btn"
-                    onclick="addCart('Aneka Jajanan',2000)">
-              + Keranjang
-            </button>
-          </div>
-        </div>
-
-      </article>
-
-
-      <!-- 5 ANEKA GORENGAN -->
-      <article class="menu-card">
-
-        <img class="menu-img"
-             src="ANEKA-GORENGAN.jpg"
-             alt="Aneka Gorengan dan Bala-Bala"
-             onerror="this.src='LOGO-PREVIEW-KANTIN.jpg'">
-
-        <div class="menu-body">
-          <span class="category">GORENGAN</span>
-
-          <h3>Aneka Gorengan</h3>
-
-          <p>
-            Bala-bala dan aneka gorengan renyah untuk camilan.
-          </p>
-
-          <div class="menu-bottom">
-            <span class="price">Mulai Rp1.000</span>
-
-            <button class="add-btn"
-                    onclick="addCart('Aneka Gorengan',1000)">
-              + Keranjang
-            </button>
-          </div>
-        </div>
-
-      </article>
-
-
-      <!-- 6 ANEKA MINUMAN -->
-      <article class="menu-card">
-
-        <img class="menu-img"
-             src="ANEKA-MINUMAN.jpg"
-             alt="Aneka Minuman"
-             onerror="this.src='LOGO-PREVIEW-KANTIN.jpg'">
-
-        <div class="menu-body">
-          <span class="category">MINUMAN SEGAR</span>
-
-          <h3>Aneka Minuman</h3>
-
-          <p>
-            Beragam minuman segar untuk menemani jajanan favoritmu.
-          </p>
-
-          <div class="menu-bottom">
-            <span class="price">Mulai Rp2.000</span>
-
-            <button class="add-btn"
-                    onclick="addCart('Aneka Minuman',2000)">
-              + Keranjang
-            </button>
-          </div>
-        </div>
-
-      </article>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ABOUT -->
-<section class="about" id="tentang">
-
-  <div class="container">
-
-    <div class="about-grid">
-
-      <div>
-        <img class="about-img"
-             src="LOGO-PREVIEW-KANTIN.jpg"
-             alt="Kantin Sehat Ibu Rezza">
-      </div>
-
-      <div>
-
-        <span class="category">TENTANG KANTIN</span>
-
-        <h2>Kantin Sehat Ibu Rezza</h2>
-
-        <p>
-          Kantin Sehat Ibu Rezza hadir untuk memberikan pilihan
-          jajanan yang praktis dan menyenangkan bagi siswa,
-          guru dan warga SDN Sukasari.
-        </p>
-
-        <br>
-
-        <p>
-          Mulai dari Risol Mayo, Baso Gemoy, Seblak,
-          Aneka Jajanan, Aneka Gorengan seperti Bala-Bala,
-          hingga Aneka Minuman.
-        </p>
-
-        <br>
-
-        <a class="btn btn-wa"
+        <a class="btn btn-white"
            href="https://wa.me/6283162813311?text=Halo%20Ibu%20Rezza%2C%20saya%20ingin%20bertanya%20tentang%20menu%20kantin."
            target="_blank"
            rel="noopener">
-
-          <svg class="wa-icon" viewBox="0 0 32 32" fill="none">
-            <path fill="white" d="M16 3.2A12.8 12.8 0 0 0 5.02 22.58L3.2 28.8l6.38-1.77A12.8 12.8 0 1 0 16 3.2Zm0 23.3c-2.01 0-3.87-.6-5.43-1.64l-.39-.25-3.79 1.05 1.01-3.69-.26-.4A10.48 10.48 0 1 1 16 26.5Z"/>
-            <path fill="white" d="M19.11 17.42c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.11 2.82c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.57.66.21 1.26.18 1.73.11.53-.08 1.6-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32Z"/>
-          </svg>
-
-          Hubungi Ibu Rezza
+          💬 WhatsApp
         </a>
 
+        <a class="btn btn-tiktok"
+           href="https://www.tiktok.com/@kantiniburezza113"
+           target="_blank"
+           rel="noopener">
+          🎵 TikTok
+        </a>
       </div>
+    </div>
 
+    <div class="hero-image">
+      <img src="RISOL-MAYO.jpg" alt="Risol Mayo Kantin Ibu Rezza">
     </div>
 
   </div>
-
 </section>
 
+<section id="sekolah">
+  <div class="section-head">
+    <div class="mini">Lingkungan Sekolah</div>
+    <h2>SDN Sukasari</h2>
+    <p>Kantin sehat untuk keluarga besar sekolah.</p>
+  </div>
 
-<!-- LOCATION -->
-<section class="location" id="lokasi">
-
-  <div class="container">
-
-    <div class="section-head">
-      <h2>📍 Lokasi Kantin</h2>
+  <div class="school-card">
+    <div class="info-card">
+      <h3>🏫 Kantin Ibu Rezza</h3>
       <p>
-        Kantin Sehat Ibu Rezza berada di lingkungan SDN Sukasari.
-        Untuk memastikan titik lokasi yang tepat, silakan hubungi melalui WhatsApp.
+        Menyediakan berbagai jajanan dan minuman yang cocok
+        untuk menemani aktivitas belajar dan bermain di sekolah.
       </p>
-    </div>
-
-    <div class="location-box">
 
       <div class="address">
-
-        <div style="
-          background:#dcfce7;
-          border:1px solid #86efac;
-          border-radius:20px;
-          padding:25px;
-        ">
-
-          <div style="font-size:42px;margin-bottom:10px;">
-            🏫
-          </div>
-
-          <h3 style="color:#166534;margin-bottom:12px;">
-            SDN SUKASARI
-          </h3>
-
-          <p style="font-size:18px;font-weight:700;color:#14532d;">
-            Jl. Galanggang RT 02 RW 16
-          </p>
-
-          <p style="margin-top:5px;">
-            Desa Galanggang, Batujajar<br>
-            Kabupaten Bandung Barat<br>
-            Jawa Barat<br>
-            <strong>Kode Pos 40561</strong>
-          </p>
-
-        </div>
-
-        <div style="
-          margin-top:18px;
-          background:white;
-          border:1px solid #bbf7d0;
-          border-radius:18px;
-          padding:20px;
-        ">
-
-          <h3 style="color:#166534;margin-bottom:8px;">
-            📱 Tanya Lokasi
-          </h3>
-
-          <p style="color:#64748b;margin-bottom:15px;">
-            Karena titik peta online belum dapat dipastikan,
-            kami tidak menampilkan peta agar pengunjung tidak diarahkan
-            ke lokasi yang salah.
-          </p>
-
-          <a
-            class="btn btn-wa"
-            href="https://wa.me/6283162813311?text=Halo%20Ibu%20Rezza%2C%20mohon%20info%20lokasi%20Kantin%20Sehat%20Ibu%20Rezza%20di%20SDN%20Sukasari."
-            target="_blank"
-            rel="noopener">
-
-            <svg class="wa-icon" viewBox="0 0 32 32" fill="none">
-              <path fill="white"
-                d="M16 3.2A12.8 12.8 0 0 0 5.02 22.58L3.2 28.8l6.38-1.77A12.8 12.8 0 1 0 16 3.2Zm0 23.3c-2.01 0-3.87-.6-5.43-1.64l-.39-.25-3.79 1.05 1.01-3.69-.26-.4A10.48 10.48 0 1 1 16 26.5Z"/>
-
-              <path fill="white"
-                d="M19.11 17.42c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.11 2.82c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.57.66.21 1.26.18 1.73.11.53-.08 1.6-.66 1.83-1.29.23-.11.25-.18-.52-.32Z"/>
-            </svg>
-
-            Hubungi Ibu Rezza
-          </a>
-
-        </div>
-
+        📍 SDN SUKASARI<br>
+        Jl. Galanggang RT 02 RW 16<br>
+        Desa Galanggang, Batujajar<br>
+        Kabupaten Bandung Barat<br>
+        Jawa Barat<br>
+        Kode Pos 40561
       </div>
-
-      <div style="
-        min-height:380px;
-        border-radius:25px;
-        background:
-          linear-gradient(135deg,#166534,#16a34a);
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        text-align:center;
-        padding:30px;
-        color:white;
-        position:relative;
-        overflow:hidden;
-      ">
-
-        <div style="
-          position:absolute;
-          width:250px;
-          height:250px;
-          border-radius:50%;
-          background:rgba(255,255,255,.08);
-          top:-80px;
-          right:-70px;
-        "></div>
-
-        <div style="
-          position:absolute;
-          width:180px;
-          height:180px;
-          border-radius:50%;
-          background:rgba(255,255,255,.06);
-          bottom:-60px;
-          left:-50px;
-        "></div>
-
-        <div style="position:relative;z-index:2;">
-
-          <div style="font-size:70px;margin-bottom:15px;">
-            📍
-          </div>
-
-          <h3 style="
-            font-size:28px;
-            margin-bottom:12px;
-          ">
-            Kantin Sehat<br>
-            Ibu Rezza
-          </h3>
-
-          <p style="
-            color:#dcfce7;
-            max-width:350px;
-          ">
-            SDN SUKASARI<br>
-            Jl. Galanggang RT 02 RW 16<br>
-            Desa Galanggang, Batujajar<br>
-            Kabupaten Bandung Barat
-          </p>
-
-          <div style="
-            display:inline-block;
-            margin-top:18px;
-            padding:8px 14px;
-            border-radius:999px;
-            background:rgba(255,255,255,.14);
-            font-weight:800;
-          ">
-            Kode Pos 40561
-          </div>
-
-        </div>
-
-      </div>
-
     </div>
 
-  </div>
-
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="kontak">
-
-  <div class="container">
-
-    <div class="section-head">
-
-      <h2>📞 Hubungi Kantin</h2>
-
+    <div class="info-card">
+      <h3>🌱 Semangat Kantin Sehat</h3>
       <p>
-        Mau pesan atau bertanya tentang menu?
-        Hubungi Ibu Rezza.
+        Kami menghadirkan pilihan jajanan yang beragam,
+        praktis dan ramah untuk keluarga sekolah.
       </p>
 
+      <div class="address">
+        💚 Bersih • Enak • Bersahabat
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="section-head">
+    <div class="mini">Menu Kantin</div>
+    <h2>Jajanan Favorit</h2>
+    <p>Pilih menu, masukkan ke keranjang, lalu pesan melalui WhatsApp.</p>
+  </div>
+
+  <div class="menu-grid">
+
+    <!-- RISOL -->
+    <article class="menu-card">
+      <div class="menu-image">
+        <img src="RISOL-MAYO.jpg" alt="Risol Mayo" loading="lazy">
+      </div>
+      <div class="menu-body">
+        <span class="menu-tag">FAVORIT</span>
+        <h3>Risol Mayo</h3>
+        <p>Risol gurih dengan isian mayo yang nikmat.</p>
+
+        <div class="menu-bottom">
+          <div class="price">Rp3.000</div>
+          <button class="add-btn" onclick="addToCart('Risol Mayo',3000)">
+            + Keranjang
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- BASO -->
+    <article class="menu-card">
+      <div class="menu-image">
+        <img src="BASO-GEMOY.jpg" alt="Baso Gemoy" loading="lazy">
+      </div>
+      <div class="menu-body">
+        <span class="menu-tag">FAVORIT</span>
+        <h3>Baso Gemoy</h3>
+        <p>Baso dengan rasa gurih dan nikmat.</p>
+
+        <div class="menu-bottom">
+          <div class="price">Rp5.000</div>
+          <button class="add-btn" onclick="addToCart('Baso Gemoy',5000)">
+            + Keranjang
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- SEBLAK -->
+    <article class="menu-card">
+      <div class="menu-image">
+        <img src="SEBLAK..jpg" alt="Seblak" loading="lazy">
+      </div>
+      <div class="menu-body">
+        <span class="menu-tag">PEDAS</span>
+        <h3>Seblak</h3>
+        <p>Seblak gurih dan pedas untuk pecinta jajanan.</p>
+
+        <div class="menu-bottom">
+          <div class="price">Rp5.000</div>
+          <button class="add-btn" onclick="addToCart('Seblak',5000)">
+            + Keranjang
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- JAJANAN -->
+    <article class="menu-card">
+      <div class="menu-image">
+        <img src="ANEKA-JAJANAN.jpg" alt="Aneka Jajanan" loading="lazy">
+      </div>
+      <div class="menu-body">
+        <span class="menu-tag">ANEKA PILIHAN</span>
+        <h3>Aneka Jajanan</h3>
+        <p>Beragam jajanan favorit untuk teman sekolah.</p>
+
+        <div class="menu-bottom">
+          <div class="price">Mulai Rp1.000</div>
+          <button class="add-btn" onclick="addToCart('Aneka Jajanan',2000)">
+            + Keranjang
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- GORENGAN -->
+    <article class="menu-card">
+      <div class="menu-image">
+        <img src="ANEKA-GORENGAN.jpg" alt="Aneka Gorengan" loading="lazy">
+      </div>
+      <div class="menu-body">
+        <span class="menu-tag">HANGAT</span>
+        <h3>Aneka Gorengan</h3>
+        <p>
+          Gorengan seperti bala-bala dan aneka gorengan lainnya.
+        </p>
+
+        <div class="menu-bottom">
+          <div class="price">Mulai Rp1.000</div>
+          <button class="add-btn" onclick="addToCart('Aneka Gorengan',1000)">
+            + Keranjang
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- MINUMAN -->
+    <article class="menu-card">
+      <div class="menu-image">
+        <img src="ANEKA-MINUMAN.jpg" alt="Aneka Minuman" loading="lazy">
+      </div>
+      <div class="menu-body">
+        <span class="menu-tag">SEGAR</span>
+        <h3>Aneka Minuman</h3>
+        <p>Berbagai pilihan minuman untuk menemani jajanan.</p>
+
+        <div class="menu-bottom">
+          <div class="price">Mulai Rp2.000</div>
+          <button class="add-btn" onclick="addToCart('Aneka Minuman',2000)">
+            + Keranjang
+          </button>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- TIKTOK -->
+<div class="tiktok-section" id="tiktok">
+  <div class="tiktok-inner">
+    <section style="padding-top:60px;padding-bottom:60px;">
+
+      <div class="tiktok-box">
+
+        <div>
+          <span class="tiktok-label">🎵 TIKTOK KANTIN</span>
+
+          <h2>Ikuti Keseruan<br>Kantin Ibu Rezza</h2>
+
+          <p>
+            Lihat video jajanan, aktivitas kantin dan konten
+            terbaru langsung dari TikTok Kantin Ibu Rezza.
+          </p>
+
+          <div class="tiktok-handle">
+            @kantiniburezza113
+          </div>
+        </div>
+
+        <div class="tiktok-actions">
+          <a class="tiktok-btn dark"
+             href="https://www.tiktok.com/@kantiniburezza113"
+             target="_blank"
+             rel="noopener">
+            🎵 Buka TikTok
+          </a>
+
+          <a class="tiktok-btn"
+             href="https://www.tiktok.com/@kantiniburezza113"
+             target="_blank"
+             rel="noopener">
+            ❤️ Follow
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+  </div>
+</div>
+
+<section id="tentang">
+  <div class="section-head">
+    <div class="mini">Tentang Kami</div>
+    <h2>Kantin yang Dekat dengan Anak Sekolah</h2>
+    <p>Suasana sederhana, jajanan beragam dan pelayanan bersahabat.</p>
+  </div>
+
+  <div class="about-grid">
+
+    <div class="about-card">
+      <div class="about-icon">🍜</div>
+      <h3>Banyak Pilihan</h3>
+      <p>
+        Mulai dari Risol Mayo, Baso Gemoy, Seblak,
+        jajanan, gorengan hingga minuman.
+      </p>
     </div>
 
-    <div class="contact-grid">
+    <div class="about-card">
+      <div class="about-icon">💚</div>
+      <h3>Kantin Sehat</h3>
+      <p>
+        Mengutamakan kebersihan dan kenyamanan
+        dalam menyediakan jajanan.
+      </p>
+    </div>
 
-      <a class="contact-card"
-         href="https://wa.me/6283162813311"
+    <div class="about-card">
+      <div class="about-icon">📱</div>
+      <h3>Pesan Mudah</h3>
+      <p>
+        Pilih menu melalui website kemudian
+        lanjutkan pesanan melalui WhatsApp.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="lokasi">
+  <div class="section-head">
+    <div class="mini">Lokasi</div>
+    <h2>Kami Berada di SDN Sukasari</h2>
+    <p>Gunakan alamat resmi di bawah untuk menuju lokasi.</p>
+  </div>
+
+  <div class="location-card">
+    <div class="location-icon">📍</div>
+
+    <h2>SDN SUKASARI</h2>
+
+    <div class="location-address">
+      Jl. Galanggang RT 02 RW 16<br>
+      Desa Galanggang, Batujajar<br>
+      Kabupaten Bandung Barat<br>
+      Jawa Barat<br>
+      Kode Pos 40561
+    </div>
+
+    <div class="location-note">
+      ℹ️ Website ini menggunakan alamat yang diberikan untuk
+      Kantin Ibu Rezza dan tidak menampilkan peta yang berpotensi
+      menunjuk ke lokasi sekolah lain.
+    </div>
+
+    <a class="btn btn-yellow"
+       href="https://wa.me/6283162813311?text=Halo%20Ibu%20Rezza%2C%20mohon%20info%20petunjuk%20lokasi%20kantin."
+       target="_blank"
+       rel="noopener">
+      📍 Tanya Petunjuk Lokasi
+    </a>
+  </div>
+</section>
+
+<section id="kontak">
+  <div class="contact-box">
+
+    <div>
+      <h2>Pesan Jajanan Sekarang 🍜</h2>
+      <p>
+        Hubungi Kantin Ibu Rezza melalui WhatsApp
+        atau email.
+      </p>
+    </div>
+
+    <div class="contact-buttons">
+
+      <a class="contact-btn"
+         href="https://wa.me/6283162813311?text=Halo%20Ibu%20Rezza%2C%20saya%20ingin%20memesan%20jajanan."
          target="_blank"
          rel="noopener">
-
-        <small>WHATSAPP</small>
-
-        <strong>
-          💬 083162813311
-        </strong>
-
+        💬 0831-6281-3311
       </a>
 
-      <a class="contact-card"
+      <a class="contact-btn"
          href="mailto:desirahmiati87@gmail.com">
-
-        <small>EMAIL</small>
-
-        <strong>
-          ✉️ desirahmiati87@gmail.com
-        </strong>
-
+        ✉️ Email
       </a>
 
     </div>
 
   </div>
-
 </section>
 
-
-<!-- CART FLOAT -->
-<button class="cart-float"
-        onclick="toggleCart()"
-        aria-label="Buka keranjang">
-
-  🛒
-
-  <span class="cart-count" id="cartCount">
-    0
-  </span>
-
-</button>
-
+</main>
 
 <!-- CART PANEL -->
 <div class="cart-panel" id="cartPanel">
 
-  <h3>🛒 Keranjang Pesanan</h3>
+  <div class="cart-head">
+    <h3>🛒 Keranjang</h3>
+    <button class="close-cart" onclick="toggleCart()">✕</button>
+  </div>
 
-  <div class="cart-items" id="cartItems"></div>
+  <div id="cartItems"></div>
 
   <div class="cart-total">
     <span>Total</span>
     <span id="cartTotal">Rp0</span>
   </div>
 
-  <button class="btn btn-wa checkout"
-          onclick="checkoutWhatsApp()">
-
-    <svg class="wa-icon" viewBox="0 0 32 32" fill="none">
-      <path fill="white" d="M16 3.2A12.8 12.8 0 0 0 5.02 22.58L3.2 28.8l6.38-1.77A12.8 12.8 0 1 0 16 3.2Zm0 23.3c-2.01 0-3.87-.6-5.43-1.64l-.39-.25-3.79 1.05 1.01-3.69-.26-.4A10.48 10.48 0 1 1 16 26.5Z"/>
-      <path fill="white" d="M19.11 17.42c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.11 2.82c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.57.66.21 1.26.18 1.73.11.53-.08 1.6-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32Z"/>
-    </svg>
-
-    Pesan via WhatsApp
-
+  <button class="checkout" onclick="checkoutWhatsApp()">
+    💬 Pesan via WhatsApp
   </button>
 
 </div>
 
+<button class="cart-float"
+        onclick="toggleCart()"
+        aria-label="Buka keranjang">
+  🛒
+  <span class="cart-count" id="cartCount">0</span>
+</button>
 
-<footer>
+<!-- INSTALL BANNER -->
+<div class="install-banner" id="installBanner">
 
-  © 2026 Kantin Sehat Ibu Rezza • SDN Sukasari
+  <div>
+    <strong>📱 Install Kantin Ibu Rezza</strong>
+    <small>Akses lebih cepat dari layar HP.</small>
+  </div>
 
-  <br>
+  <div class="install-actions">
+    <button class="install-now" id="installNow">
+      Install
+    </button>
 
-  Jl. Galanggang RT 02 RW 16,
-  Desa Galanggang, Batujajar,
-  Kabupaten Bandung Barat 40561
+    <button class="install-close" id="installClose">
+      ✕
+    </button>
+  </div>
 
-</footer>
-
-
-<div class="notice" id="notice">
-  Ditambahkan ke keranjang 🛒
 </div>
 
+<div class="toast" id="toast"></div>
+
+<footer>
+  <img src="LOGO-PREVIEW-KANTIN.jpg" alt="Kantin Ibu Rezza">
+
+  <p>
+    <strong>Kantin Sehat Ibu Rezza</strong>
+  </p>
+
+  <p>
+    SDN Sukasari • Jl. Galanggang RT 02 RW 16
+  </p>
+
+  <p>
+    Desa Galanggang, Batujajar • Kabupaten Bandung Barat • Jawa Barat 40561
+  </p>
+
+  <p style="margin-top:10px;">
+    © <span id="year"></span> Kantin Sehat Ibu Rezza
+  </p>
+</footer>
 
 <script>
-
 /* =========================
-   CART DATA
+   DATA
 ========================= */
+
+const WA_NUMBER = "6283162813311";
 
 let cart = JSON.parse(
   localStorage.getItem("kantin_ibu_rezza_cart") || "[]"
 );
-
 
 /* =========================
    FORMAT RUPIAH
 ========================= */
 
 function rupiah(number){
-
-  return new Intl.NumberFormat(
-    "id-ID",
-    {
-      style:"currency",
-      currency:"IDR",
-      maximumFractionDigits:0
-    }
-  ).format(number);
-
+  return new Intl.NumberFormat("id-ID",{
+    style:"currency",
+    currency:"IDR",
+    maximumFractionDigits:0
+  }).format(number);
 }
 
-
 /* =========================
-   ADD CART
+   TOAST
 ========================= */
 
-function addCart(name,price){
+let toastTimer;
 
-  const existing = cart.find(
-    item => item.name === name
+function showToast(message){
+  const toast = document.getElementById("toast");
+
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(()=>{
+    toast.classList.remove("show");
+  },2200);
+}
+
+/* =========================
+   CART
+========================= */
+
+function saveCart(){
+  localStorage.setItem(
+    "kantin_ibu_rezza_cart",
+    JSON.stringify(cart)
   );
+}
+
+function addToCart(name,price){
+
+  const existing = cart.find(item => item.name === name);
 
   if(existing){
-
-    existing.qty += 1;
-
+    existing.qty++;
   }else{
-
     cart.push({
       name:name,
       price:price,
       qty:1
     });
-
   }
 
   saveCart();
-
-  showNotice(
-    name + " ditambahkan ke keranjang 🛒"
-  );
-
-}
-
-
-/* =========================
-   REMOVE ITEM
-========================= */
-
-function removeCart(index){
-
-  cart.splice(index,1);
-
-  saveCart();
-
-}
-
-
-/* =========================
-   SAVE CART
-========================= */
-
-function saveCart(){
-
-  localStorage.setItem(
-    "kantin_ibu_rezza_cart",
-    JSON.stringify(cart)
-  );
-
   renderCart();
 
+  document.getElementById("cartPanel").classList.add("show");
+
+  showToast(name + " masuk keranjang 🛒");
 }
 
+function changeQty(index,change){
 
-/* =========================
-   RENDER CART
-========================= */
+  if(!cart[index]) return;
+
+  cart[index].qty += change;
+
+  if(cart[index].qty <= 0){
+    cart.splice(index,1);
+  }
+
+  saveCart();
+  renderCart();
+}
 
 function renderCart(){
 
-  const itemsEl =
-    document.getElementById("cartItems");
+  const items = document.getElementById("cartItems");
+  const count = document.getElementById("cartCount");
+  const totalElement = document.getElementById("cartTotal");
 
-  const countEl =
-    document.getElementById("cartCount");
+  const totalQty = cart.reduce(
+    (sum,item)=>sum + item.qty,
+    0
+  );
 
-  const totalEl =
-    document.getElementById("cartTotal");
+  const total = cart.reduce(
+    (sum,item)=>sum + (item.price * item.qty),
+    0
+  );
 
+  count.textContent = totalQty;
+  totalElement.textContent = rupiah(total);
 
-  if(!cart.length){
+  if(cart.length === 0){
 
-    itemsEl.innerHTML =
-      '<div class="empty">Keranjang masih kosong 😊</div>';
-
-    countEl.textContent = "0";
-
-    totalEl.textContent = "Rp0";
+    items.innerHTML = `
+      <div class="cart-empty">
+        🛒<br>
+        Keranjang masih kosong.
+        <br><br>
+        Yuk pilih jajanan!
+      </div>
+    `;
 
     return;
-
   }
 
+  items.innerHTML = cart.map((item,index)=>`
 
-  let total = 0;
-  let count = 0;
+    <div class="cart-item">
 
-
-  itemsEl.innerHTML = cart.map(
-    (item,index) => {
-
-      const subtotal =
-        item.price * item.qty;
-
-      total += subtotal;
-      count += item.qty;
-
-
-      return `
-        <div class="cart-item">
-
-          <div>
-            <strong>${item.name}</strong>
-            <br>
-            <small>
-              ${item.qty} × ${rupiah(item.price)}
-            </small>
-          </div>
-
-          <div style="text-align:right">
-
-            <strong>
-              ${rupiah(subtotal)}
-            </strong>
-
-            <br>
-
-            <button onclick="removeCart(${index})">
-              Hapus
-            </button>
-
-          </div>
-
+      <div>
+        <div class="cart-item-name">
+          ${escapeHtml(item.name)}
         </div>
-      `;
 
-    }
-  ).join("");
+        <div class="cart-item-price">
+          ${rupiah(item.price)}
+        </div>
 
+        <div class="qty">
+          <button onclick="changeQty(${index},-1)">−</button>
+          <strong>${item.qty}</strong>
+          <button onclick="changeQty(${index},1)">+</button>
+        </div>
+      </div>
 
-  countEl.textContent = count;
+      <strong>
+        ${rupiah(item.price * item.qty)}
+      </strong>
 
-  totalEl.textContent = rupiah(total);
+    </div>
 
+  `).join("");
 }
-
-
-/* =========================
-   TOGGLE CART
-========================= */
 
 function toggleCart(){
-
-  const panel =
-    document.getElementById("cartPanel");
-
-  panel.classList.toggle("show");
-
+  document
+    .getElementById("cartPanel")
+    .classList.toggle("show");
 }
-
-
-/* =========================
-   CHECKOUT WHATSAPP
-========================= */
 
 function checkoutWhatsApp(){
 
-  if(!cart.length){
-
-    showNotice(
-      "Keranjang masih kosong 😊"
-    );
-
+  if(cart.length === 0){
+    showToast("Keranjang masih kosong.");
     return;
-
   }
-
 
   let message =
     "Halo Ibu Rezza, saya ingin memesan:%0A%0A";
 
-
-  let total = 0;
-
-
   cart.forEach((item,index)=>{
-
-    const subtotal =
-      item.price * item.qty;
-
-    total += subtotal;
-
     message +=
       (index + 1) +
       ". " +
       item.name +
-      " — " +
+      " x" +
       item.qty +
-      " x " +
-      rupiah(item.price) +
       " = " +
-      rupiah(subtotal) +
+      rupiah(item.price * item.qty) +
       "%0A";
-
   });
 
+  const total = cart.reduce(
+    (sum,item)=>sum + item.price * item.qty,
+    0
+  );
 
   message +=
     "%0ATotal: " +
     rupiah(total) +
-    "%0A%0A" +
-    "Lokasi: SDN Sukasari, Jl. Galanggang RT 02 RW 16, Desa Galanggang, Batujajar, Kabupaten Bandung Barat, 40561.";
-
+    "%0A%0AMohon info ketersediaannya. Terima kasih.";
 
   window.open(
-    "https://wa.me/6283162813311?text=" +
-    message,
+    "https://wa.me/" + WA_NUMBER + "?text=" + message,
     "_blank"
   );
-
 }
 
-
 /* =========================
-   NOTICE
+   SECURITY / HTML
 ========================= */
 
-let noticeTimer;
+function escapeHtml(value){
 
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+}
 
-function showNotice(text){
+/* =========================
+   PWA INSTALL
+========================= */
 
-  const notice =
-    document.getElementById("notice");
+let deferredPrompt = null;
 
-  notice.textContent = text;
+const installTop =
+  document.getElementById("installTop");
 
-  notice.classList.add("show");
+const installBanner =
+  document.getElementById("installBanner");
 
+const installNow =
+  document.getElementById("installNow");
 
-  clearTimeout(noticeTimer);
+const installClose =
+  document.getElementById("installClose");
 
+window.addEventListener(
+  "beforeinstallprompt",
+  event => {
 
-  noticeTimer = setTimeout(
-    ()=>{
-      notice.classList.remove("show");
-    },
-    2200
-  );
+    event.preventDefault();
+
+    deferredPrompt = event;
+
+    installTop.style.display = "block";
+    installBanner.classList.add("show");
+  }
+);
+
+async function installApp(){
+
+  if(!deferredPrompt){
+
+    showToast(
+      "Gunakan menu browser → Tambahkan ke layar utama."
+    );
+
+    return;
+  }
+
+  deferredPrompt.prompt();
+
+  const result =
+    await deferredPrompt.userChoice;
+
+  if(result.outcome === "accepted"){
+    showToast("Aplikasi sedang dipasang 📱");
+  }
+
+  deferredPrompt = null;
+
+  installTop.style.display = "none";
+  installBanner.classList.remove("show");
+}
+
+installTop.addEventListener(
+  "click",
+  installApp
+);
+
+installNow.addEventListener(
+  "click",
+  installApp
+);
+
+installClose.addEventListener(
+  "click",
+  ()=>{
+    installBanner.classList.remove("show");
+  }
+);
+
+window.addEventListener(
+  "appinstalled",
+  ()=>{
+    installTop.style.display = "none";
+    installBanner.classList.remove("show");
+
+    showToast("Kantin Ibu Rezza berhasil di-install 🎉");
+  }
+);
+
+/* =========================
+   SERVICE WORKER
+========================= */
+
+if("serviceWorker" in navigator){
+
+  window.addEventListener("load",()=>{
+
+    navigator.serviceWorker
+      .register("./sw.js")
+      .then(()=>{
+        console.log("ALFA PWA: Service Worker aktif.");
+      })
+      .catch(error=>{
+        console.log(
+          "Service Worker gagal:",
+          error
+        );
+      });
+
+  });
 
 }
 
+/* =========================
+   YEAR
+========================= */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 
 /* =========================
-   INIT
+   START
 ========================= */
 
 renderCart();
-
 </script>
 
 </body>
