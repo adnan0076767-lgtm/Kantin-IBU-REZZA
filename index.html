@@ -2637,6 +2637,101 @@ if ("serviceWorker" in navigator) {
   });
 }
 </script>
+
+<!-- KODE KEDUA: TOMBOL INSTALL -->
+<button
+  id="installAppBtn"
+  onclick="installKantinApp()"
+  style="
+    display:none;
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:99999;
+    padding:14px 20px;
+    border:none;
+    border-radius:14px;
+    background:#16803c;
+    color:#fff;
+    font-weight:700;
+    font-size:15px;
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+    cursor:pointer;
+    align-items:center;
+    gap:8px;
+  "
+>
+  📱 Install Kantin Ibu Rezza
+</button>
+
+<!-- KODE PERTAMA: JAVASCRIPT -->
+<script>
+let deferredInstallPrompt = null;
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  deferredInstallPrompt = event;
+
+  const installBtn = document.getElementById("installAppBtn");
+  if (installBtn) {
+    installBtn.style.display = "flex";
+  }
+});
+
+window.addEventListener("appinstalled", () => {
+  deferredInstallPrompt = null;
+
+  const installBtn = document.getElementById("installAppBtn");
+  if (installBtn) {
+    installBtn.style.display = "none";
+  }
+});
+
+function installKantinApp() {
+  if (!deferredInstallPrompt) {
+    alert(
+      "Install App belum tersedia di browser ini. " +
+      "Pastikan menggunakan Google Chrome Android dan buka website melalui HTTPS."
+    );
+    return;
+  }
+
+  deferredInstallPrompt.prompt();
+
+  deferredInstallPrompt.userChoice.then((choice) => {
+    if (choice.outcome === "accepted") {
+      console.log("Kantin Ibu Rezza berhasil dipasang.");
+    }
+
+    deferredInstallPrompt = null;
+  });
+}
+</script>
+'
+<button
+  id="installAppBtn"
+  onclick="installKantinApp()"
+  style="
+    display:none;
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:99999;
+    padding:14px 20px;
+    border:none;
+    border-radius:14px;
+    background:#16803c;
+    color:#fff;
+    font-weight:700;
+    font-size:15px;
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+    cursor:pointer;
+    align-items:center;
+    gap:8px;
+  "
+>
+  📱 Install Kantin Ibu Rezza
+</button>
      
 </body>
 </html>
