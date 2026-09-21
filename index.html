@@ -3,20 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <meta name="theme-color" content="#16803c">
 <meta name="description" content="Kantin Sehat Ibu Rezza - Jajanan dan minuman untuk keluarga besar SDN Sukasari, Jl. Galanggang RT 02 RW 16, Desa Galanggang, Batujajar, Kabupaten Bandung Barat, Jawa Barat 40561.">
+
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Kantin Ibu Rezza">
 
-<link rel="manifest" href="manifest.json">
-<link rel="icon" href="LOGO-PREVIEW-KANTIN.jpg">
-<link rel="apple-touch-icon" href="LOGO-PREVIEW-KANTIN.jpg">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./LOGO-PREVIEW-KANTIN.jpg">
+<link rel="apple-touch-icon" href="./LOGO-PREVIEW-KANTIN.jpg">
 
 <meta property="og:title" content="Kantin Sehat Ibu Rezza | SDN Sukasari">
 <meta property="og:description" content="Risol Mayo, Baso Gemoy, Seblak, aneka jajanan, gorengan dan minuman.">
-<meta property="og:image" content="LOGO-PREVIEW-KANTIN.jpg">
+<meta property="og:image" content="./LOGO-PREVIEW-KANTIN.jpg">
 
 <title>Kantin Sehat Ibu Rezza | SDN Sukasari</title>
 
@@ -57,29 +59,33 @@ button{
   --green-dark:#075c2b;
   --green-light:#dff8e7;
   --yellow:#ffc928;
-  --orange:#f28c28;
-  --red:#e53935;
   --white:#fff;
   --dark:#123522;
   --shadow:0 12px 30px rgba(15,90,43,.12);
 }
 
-/* TOP */
+/* =========================
+   TOP BAR
+========================= */
+
 .topbar{
   background:var(--green-dark);
-  color:white;
+  color:#fff;
   text-align:center;
   padding:8px 15px;
   font-size:13px;
-  font-weight:700;
+  font-weight:800;
 }
 
-/* NAV */
+/* =========================
+   NAVIGATION
+========================= */
+
 nav{
   position:sticky;
   top:0;
   z-index:1000;
-  background:rgba(255,255,255,.96);
+  background:rgba(255,255,255,.97);
   backdrop-filter:blur(10px);
   border-bottom:1px solid #d9f0df;
   box-shadow:0 4px 18px rgba(0,0,0,.06);
@@ -129,7 +135,7 @@ nav{
   padding:8px 11px;
   border-radius:10px;
   font-size:13px;
-  font-weight:700;
+  font-weight:800;
 }
 
 .nav-links a:hover{
@@ -138,13 +144,14 @@ nav{
 }
 
 .install-btn{
+  display:none;
   border:0;
   background:var(--green);
   color:#fff;
   padding:9px 13px;
   border-radius:11px;
   cursor:pointer;
-  font-weight:800;
+  font-weight:900;
   box-shadow:0 5px 15px rgba(22,128,60,.22);
 }
 
@@ -152,7 +159,27 @@ nav{
   background:var(--green-dark);
 }
 
-/* HERO */
+/* =========================
+   SVG ICON
+========================= */
+
+.icon{
+  width:21px;
+  height:21px;
+  display:inline-block;
+  vertical-align:middle;
+  flex:none;
+}
+
+.icon-lg{
+  width:25px;
+  height:25px;
+}
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
   max-width:1150px;
   margin:25px auto 0;
@@ -186,7 +213,7 @@ nav{
   padding:8px 13px;
   border-radius:30px;
   font-size:12px;
-  font-weight:800;
+  font-weight:900;
   margin-bottom:16px;
 }
 
@@ -241,10 +268,14 @@ nav{
   color:var(--green-dark);
 }
 
-.btn-tiktok{
+.btn-dark{
   background:#111;
   color:#fff;
 }
+
+/* =========================
+   HERO IMAGE
+========================= */
 
 .hero-image{
   min-height:470px;
@@ -274,7 +305,10 @@ nav{
   box-shadow:0 25px 50px rgba(0,0,0,.2);
 }
 
-/* SECTIONS */
+/* =========================
+   SECTION
+========================= */
+
 section{
   max-width:1150px;
   margin:auto;
@@ -304,7 +338,10 @@ section{
   color:#688071;
 }
 
-/* SCHOOL */
+/* =========================
+   SCHOOL
+========================= */
+
 .school-card{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -333,11 +370,14 @@ section{
   padding:16px;
   background:var(--green-light);
   border-radius:15px;
-  font-weight:700;
+  font-weight:800;
   color:var(--green-dark);
 }
 
-/* MENU */
+/* =========================
+   MENU
+========================= */
+
 .menu-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -430,7 +470,10 @@ section{
   background:var(--green-dark);
 }
 
-/* TIKTOK */
+/* =========================
+   TIKTOK
+========================= */
+
 .tiktok-section{
   background:linear-gradient(135deg,#101010,#252525);
   max-width:none;
@@ -456,9 +499,11 @@ section{
 }
 
 .tiktok-label{
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
   background:#252525;
-  color:#ff4f81;
+  color:#fff;
   border:1px solid #444;
   padding:7px 11px;
   border-radius:20px;
@@ -506,7 +551,10 @@ section{
   color:#fff;
 }
 
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
+
 .about-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -542,7 +590,10 @@ section{
   font-size:14px;
 }
 
-/* LOCATION */
+/* =========================
+   LOCATION
+========================= */
+
 .location-card{
   background:#fff;
   border-radius:25px;
@@ -580,7 +631,10 @@ section{
   font-size:13px;
 }
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
+
 .contact-box{
   background:linear-gradient(135deg,#075c2b,#16803c);
   color:#fff;
@@ -609,6 +663,10 @@ section{
 }
 
 .contact-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
   background:#fff;
   color:var(--green-dark);
   padding:13px 17px;
@@ -616,7 +674,10 @@ section{
   font-weight:900;
 }
 
-/* CART */
+/* =========================
+   CART
+========================= */
+
 .cart-float{
   position:fixed;
   right:20px;
@@ -641,7 +702,7 @@ section{
   height:23px;
   display:grid;
   place-items:center;
-  background:var(--red);
+  background:#e53935;
   border-radius:50%;
   font-size:11px;
   font-weight:900;
@@ -751,7 +812,10 @@ section{
   cursor:pointer;
 }
 
-/* INSTALL */
+/* =========================
+   INSTALL PWA
+========================= */
+
 .install-banner{
   display:none;
   position:fixed;
@@ -792,7 +856,7 @@ section{
   padding:9px 11px;
   border-radius:9px;
   cursor:pointer;
-  font-weight:800;
+  font-weight:900;
 }
 
 .install-now{
@@ -805,7 +869,29 @@ section{
   color:#444;
 }
 
-/* TOAST */
+/* =========================
+   MANUAL INSTALL GUIDE
+========================= */
+
+.manual-install{
+  display:none;
+  margin-top:12px;
+  background:#f0faf3;
+  border:1px solid #d6ebda;
+  color:#45624d;
+  border-radius:12px;
+  padding:12px;
+  font-size:12px;
+}
+
+.manual-install.show{
+  display:block;
+}
+
+/* =========================
+   TOAST
+========================= */
+
 .toast{
   position:fixed;
   left:50%;
@@ -829,7 +915,10 @@ section{
   transform:translate(-50%,0);
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
+
 footer{
   background:#07351b;
   color:#d9f4e1;
@@ -854,8 +943,12 @@ footer p{
   color:#afd1b9;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media(max-width:850px){
+
   .nav-links{
     display:none;
   }
@@ -893,6 +986,7 @@ footer p{
 }
 
 @media(max-width:560px){
+
   .brand-text{
     font-size:13px;
   }
@@ -951,6 +1045,22 @@ footer p{
     right:15px;
     bottom:88px;
   }
+
+  .install-banner.show{
+    align-items:flex-start;
+  }
+
+  .install-banner{
+    flex-direction:column;
+  }
+
+  .install-actions{
+    width:100%;
+  }
+
+  .install-actions button{
+    flex:1;
+  }
 }
 </style>
 </head>
@@ -963,8 +1073,10 @@ footer p{
 
 <nav>
   <div class="nav-inner">
+
     <a href="#beranda" class="brand">
       <img src="LOGO-PREVIEW-KANTIN.jpg" alt="Logo Kantin Sehat Ibu Rezza">
+
       <div class="brand-text">
         KANTIN IBU REZZA
         <small>Jajanan Sehat SDN Sukasari</small>
@@ -979,19 +1091,31 @@ footer p{
       <a href="#kontak">Kontak</a>
     </div>
 
-    <button class="install-btn" id="installTop" style="display:none;">
+    <button
+      class="install-btn"
+      id="installTop"
+      type="button">
       📲 Install
     </button>
+
   </div>
 </nav>
 
 <main>
 
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero" id="beranda">
+
   <div class="hero-card">
 
     <div class="hero-content">
-      <div class="badge">🍜 JAJANAN FAVORIT KELUARGA SEKOLAH</div>
+
+      <div class="badge">
+        🍜 JAJANAN FAVORIT KELUARGA SEKOLAH
+      </div>
 
       <h1>
         Kantin Sehat<br>
@@ -1005,34 +1129,62 @@ footer p{
       </p>
 
       <div class="hero-buttons">
+
         <a class="btn btn-yellow" href="#menu">
           🍜 Lihat Menu
         </a>
 
-        <a class="btn btn-white"
-           href="https://wa.me/6283162813311?text=Halo%20Ibu%20Rezza%2C%20saya%20ingin%20bertanya%20tentang%20menu%20kantin."
-           target="_blank"
-           rel="noopener">
-          💬 WhatsApp
+        <a
+          class="btn btn-white"
+          href="https://wa.me/6283162813311?text=Halo%20Ibu%20Rezza%2C%20saya%20ingin%20bertanya%20tentang%20menu%20kantin."
+          target="_blank"
+          rel="noopener">
+
+          <!-- WhatsApp SVG -->
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#25D366" d="M20.52 3.48A11.83 11.83 0 0 0 12.08 0C5.55 0 .24 5.31.24 11.84c0 2.09.55 4.13 1.59 5.93L.13 24l6.38-1.67a11.8 11.8 0 0 0 5.57 1.42h.01c6.52 0 11.83-5.31 11.83-11.84 0-3.16-1.23-6.13-3.4-8.43Z"/>
+            <path fill="#fff" d="M17.5 13.95c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.8-1.49-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+          </svg>
+
+          WhatsApp
         </a>
 
-        <a class="btn btn-tiktok"
-           href="https://www.tiktok.com/@kantiniburezza113"
-           target="_blank"
-           rel="noopener">
-          🎵 TikTok
+        <a
+          class="btn btn-dark"
+          href="https://www.tiktok.com/@kantiniburezza113"
+          target="_blank"
+          rel="noopener">
+
+          <!-- TikTok SVG -->
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#25F4EE" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.12V2h-3.96v13.2a2.9 2.9 0 1 1-2-2.74V8.42a6.84 6.84 0 1 0 5.96 6.78V8.51a8.76 8.76 0 0 0 5.15 1.67V6.22c-.48.01-.93-.05-1.38-.17Z"/>
+            <path fill="#FE2C55" d="M20.97 6.18c-.44 0-.88-.06-1.38-.17a4.83 4.83 0 0 1-3.77-4.12V2h-1.75v14.19a2.9 2.9 0 1 1-4.21-2.59v-1.14a6.84 6.84 0 1 0 5.96 6.78V8.51a8.76 8.76 0 0 0 5.15 1.67V6.18Z"/>
+            <path fill="#fff" d="M14.07 2v13.2a2.9 2.9 0 1 1-2-2.74v-1.25a4.1 4.1 0 1 0 2 3.99V6.54a8.7 8.7 0 0 0 3.52 1.48A4.84 4.84 0 0 1 15.82 2h-1.75Z"/>
+          </svg>
+
+          TikTok
         </a>
+
       </div>
+
     </div>
 
     <div class="hero-image">
-      <img src="RISOL-MAYO.jpg" alt="Risol Mayo Kantin Ibu Rezza">
+      <img
+        src="RISOL-MAYO.jpg"
+        alt="Risol Mayo Kantin Ibu Rezza">
     </div>
 
   </div>
+
 </section>
 
+<!-- =========================
+     SCHOOL
+========================= -->
+
 <section id="sekolah">
+
   <div class="section-head">
     <div class="mini">Lingkungan Sekolah</div>
     <h2>SDN Sukasari</h2>
@@ -1040,8 +1192,11 @@ footer p{
   </div>
 
   <div class="school-card">
+
     <div class="info-card">
+
       <h3>🏫 Kantin Ibu Rezza</h3>
+
       <p>
         Menyediakan berbagai jajanan dan minuman yang cocok
         untuk menemani aktivitas belajar dan bermain di sekolah.
@@ -1055,10 +1210,13 @@ footer p{
         Jawa Barat<br>
         Kode Pos 40561
       </div>
+
     </div>
 
     <div class="info-card">
+
       <h3>🌱 Semangat Kantin Sehat</h3>
+
       <p>
         Kami menghadirkan pilihan jajanan yang beragam,
         praktis dan ramah untuk keluarga sekolah.
@@ -1067,149 +1225,292 @@ footer p{
       <div class="address">
         💚 Bersih • Enak • Bersahabat
       </div>
+
     </div>
+
   </div>
+
 </section>
 
+<!-- =========================
+     MENU
+========================= -->
+
 <section id="menu">
+
   <div class="section-head">
     <div class="mini">Menu Kantin</div>
     <h2>Jajanan Favorit</h2>
-    <p>Pilih menu, masukkan ke keranjang, lalu pesan melalui WhatsApp.</p>
+    <p>
+      Pilih menu, masukkan ke keranjang,
+      lalu pesan melalui WhatsApp.
+    </p>
   </div>
 
   <div class="menu-grid">
 
     <!-- RISOL -->
     <article class="menu-card">
+
       <div class="menu-image">
-        <img src="RISOL-MAYO.jpg" alt="Risol Mayo" loading="lazy">
+        <img
+          src="RISOL-MAYO.jpg"
+          alt="Risol Mayo"
+          loading="lazy">
       </div>
+
       <div class="menu-body">
+
         <span class="menu-tag">FAVORIT</span>
+
         <h3>Risol Mayo</h3>
-        <p>Risol gurih dengan isian mayo yang nikmat.</p>
+
+        <p>
+          Risol gurih dengan isian mayo yang nikmat.
+        </p>
 
         <div class="menu-bottom">
-          <div class="price">Rp3.000</div>
-          <button class="add-btn" onclick="addToCart('Risol Mayo',3000)">
+
+          <div class="price">
+            Rp3.000
+          </div>
+
+          <button
+            class="add-btn"
+            onclick="addToCart('Risol Mayo',3000)">
             + Keranjang
           </button>
+
         </div>
+
       </div>
+
     </article>
 
     <!-- BASO -->
     <article class="menu-card">
+
       <div class="menu-image">
-        <img src="BASO-GEMOY.jpg" alt="Baso Gemoy" loading="lazy">
+        <img
+          src="BASO-GEMOY.jpg"
+          alt="Baso Gemoy"
+          loading="lazy">
       </div>
+
       <div class="menu-body">
+
         <span class="menu-tag">FAVORIT</span>
+
         <h3>Baso Gemoy</h3>
-        <p>Baso dengan rasa gurih dan nikmat.</p>
+
+        <p>
+          Baso dengan rasa gurih dan nikmat.
+        </p>
 
         <div class="menu-bottom">
-          <div class="price">Rp5.000</div>
-          <button class="add-btn" onclick="addToCart('Baso Gemoy',5000)">
+
+          <div class="price">
+            Rp5.000
+          </div>
+
+          <button
+            class="add-btn"
+            onclick="addToCart('Baso Gemoy',5000)">
             + Keranjang
           </button>
+
         </div>
+
       </div>
+
     </article>
 
     <!-- SEBLAK -->
     <article class="menu-card">
+
       <div class="menu-image">
-        <img src="SEBLAK..jpg" alt="Seblak" loading="lazy">
+        <img
+          src="SEBLAK..jpg"
+          alt="Seblak"
+          loading="lazy">
       </div>
+
       <div class="menu-body">
+
         <span class="menu-tag">PEDAS</span>
+
         <h3>Seblak</h3>
-        <p>Seblak gurih dan pedas untuk pecinta jajanan.</p>
+
+        <p>
+          Seblak gurih dan pedas untuk pecinta jajanan.
+        </p>
 
         <div class="menu-bottom">
-          <div class="price">Rp5.000</div>
-          <button class="add-btn" onclick="addToCart('Seblak',5000)">
+
+          <div class="price">
+            Rp5.000
+          </div>
+
+          <button
+            class="add-btn"
+            onclick="addToCart('Seblak',5000)">
             + Keranjang
           </button>
+
         </div>
+
       </div>
+
     </article>
 
     <!-- JAJANAN -->
     <article class="menu-card">
+
       <div class="menu-image">
-        <img src="ANEKA-JAJANAN.jpg" alt="Aneka Jajanan" loading="lazy">
+        <img
+          src="ANEKA-JAJANAN.jpg"
+          alt="Aneka Jajanan"
+          loading="lazy">
       </div>
+
       <div class="menu-body">
+
         <span class="menu-tag">ANEKA PILIHAN</span>
+
         <h3>Aneka Jajanan</h3>
-        <p>Beragam jajanan favorit untuk teman sekolah.</p>
+
+        <p>
+          Beragam jajanan favorit untuk teman sekolah.
+        </p>
 
         <div class="menu-bottom">
-          <div class="price">Mulai Rp1.000</div>
-          <button class="add-btn" onclick="addToCart('Aneka Jajanan',2000)">
+
+          <div class="price">
+            Mulai Rp1.000
+          </div>
+
+          <button
+            class="add-btn"
+            onclick="addToCart('Aneka Jajanan',2000)">
             + Keranjang
           </button>
+
         </div>
+
       </div>
+
     </article>
 
     <!-- GORENGAN -->
     <article class="menu-card">
+
       <div class="menu-image">
-        <img src="ANEKA-GORENGAN.jpg" alt="Aneka Gorengan" loading="lazy">
+        <img
+          src="ANEKA-GORENGAN.jpg"
+          alt="Aneka Gorengan"
+          loading="lazy">
       </div>
+
       <div class="menu-body">
+
         <span class="menu-tag">HANGAT</span>
+
         <h3>Aneka Gorengan</h3>
+
         <p>
           Gorengan seperti bala-bala dan aneka gorengan lainnya.
         </p>
 
         <div class="menu-bottom">
-          <div class="price">Mulai Rp1.000</div>
-          <button class="add-btn" onclick="addToCart('Aneka Gorengan',1000)">
+
+          <div class="price">
+            Mulai Rp1.000
+          </div>
+
+          <button
+            class="add-btn"
+            onclick="addToCart('Aneka Gorengan',1000)">
             + Keranjang
           </button>
+
         </div>
+
       </div>
+
     </article>
 
     <!-- MINUMAN -->
     <article class="menu-card">
+
       <div class="menu-image">
-        <img src="ANEKA-MINUMAN.jpg" alt="Aneka Minuman" loading="lazy">
+        <img
+          src="ANEKA-MINUMAN.jpg"
+          alt="Aneka Minuman"
+          loading="lazy">
       </div>
+
       <div class="menu-body">
+
         <span class="menu-tag">SEGAR</span>
+
         <h3>Aneka Minuman</h3>
-        <p>Berbagai pilihan minuman untuk menemani jajanan.</p>
+
+        <p>
+          Berbagai pilihan minuman untuk menemani jajanan.
+        </p>
 
         <div class="menu-bottom">
-          <div class="price">Mulai Rp2.000</div>
-          <button class="add-btn" onclick="addToCart('Aneka Minuman',2000)">
+
+          <div class="price">
+            Mulai Rp2.000
+          </div>
+
+          <button
+            class="add-btn"
+            onclick="addToCart('Aneka Minuman',2000)">
             + Keranjang
           </button>
+
         </div>
+
       </div>
+
     </article>
 
   </div>
+
 </section>
 
-<!-- TIKTOK -->
+<!-- =========================
+     TIKTOK
+========================= -->
+
 <div class="tiktok-section" id="tiktok">
+
   <div class="tiktok-inner">
+
     <section style="padding-top:60px;padding-bottom:60px;">
 
       <div class="tiktok-box">
 
         <div>
-          <span class="tiktok-label">🎵 TIKTOK KANTIN</span>
 
-          <h2>Ikuti Keseruan<br>Kantin Ibu Rezza</h2>
+          <span class="tiktok-label">
+
+            <!-- TikTok SVG -->
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#25F4EE" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.12V2h-3.96v13.2a2.9 2.9 0 1 1-2-2.74V8.42a6.84 6.84 0 1 0 5.96 6.78V8.51a8.76 8.76 0 0 0 5.15 1.67V6.22c-.48.01-.93-.05-1.38-.17Z"/>
+              <path fill="#FE2C55" d="M20.97 6.18c-.44 0-.88-.06-1.38-.17a4.83 4.83 0 0 1-3.77-4.12V2h-1.75v14.19a2.9 2.9 0 1 1-4.21-2.59v-1.14a6.84 6.84 0 1 0 5.96 6.78V8.51a8.76 8.76 0 0 0 5.15 1.67V6.18Z"/>
+            </svg>
+
+            TIKTOK KANTIN
+
+          </span>
+
+          <h2>
+            Ikuti Keseruan<br>
+            Kantin Ibu Rezza
+          </h2>
 
           <p>
             Lihat video jajanan, aktivitas kantin dan konten
@@ -1219,191 +1520,392 @@ footer p{
           <div class="tiktok-handle">
             @kantiniburezza113
           </div>
+
         </div>
 
         <div class="tiktok-actions">
-          <a class="tiktok-btn dark"
-             href="https://www.tiktok.com/@kantiniburezza113"
-             target="_blank"
-             rel="noopener">
-            🎵 Buka TikTok
+
+          <a
+            class="tiktok-btn dark"
+            href="https://www.tiktok.com/@kantiniburezza113"
+            target="_blank"
+            rel="noopener">
+
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#25F4EE" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.12V2h-3.96v13.2a2.9 2.9 0 1 1-2-2.74V8.42a6.84 6.84 0 1 0 5.96 6.78V8.51a8.76 8.76 0 0 0 5.15 1.67V6.22c-.48.01-.93-.05-1.38-.17Z"/>
+              <path fill="#FE2C55" d="M20.97 6.18c-.44 0-.88-.06-1.38-.17a4.83 4.83 0 0 1-3.77-4.12V2h-1.75v14.19a2.9 2.9 0 1 1-4.21-2.59v-1.14a6.84 6.84 0 1 0 5.96 6.78V8.51a8.76 8.76 0 0 0 5.15 1.67V6.18Z"/>
+              <path fill="#fff" d="M14.07 2v13.2a2.9 2.9 0 1 1-2-2.74v-1.25a4.1 4.1 0 1 0 2 3.99V6.54a8.7 8.7 0 0 0 3.52 1.48A4.84 4.84 0 0 1 15.82 2h-1.75Z"/>
+            </svg>
+
+            Buka TikTok
           </a>
 
-          <a class="tiktok-btn"
-             href="https://www.tiktok.com/@kantiniburezza113"
-             target="_blank"
-             rel="noopener">
-            ❤️ Follow
+          <a
+            class="tiktok-btn"
+            href="https://www.tiktok.com/@kantiniburezza113"
+            target="_blank"
+            rel="noopener">
+
+            <span style="font-size:18px;">♥</span>
+            Follow
           </a>
+
         </div>
 
       </div>
 
     </section>
+
   </div>
+
 </div>
 
+<!-- =========================
+     ABOUT
+========================= -->
+
 <section id="tentang">
+
   <div class="section-head">
+
     <div class="mini">Tentang Kami</div>
-    <h2>Kantin yang Dekat dengan Anak Sekolah</h2>
-    <p>Suasana sederhana, jajanan beragam dan pelayanan bersahabat.</p>
+
+    <h2>
+      Kantin yang Dekat dengan Anak Sekolah
+    </h2>
+
+    <p>
+      Suasana sederhana, jajanan beragam dan pelayanan bersahabat.
+    </p>
+
   </div>
 
   <div class="about-grid">
 
     <div class="about-card">
+
       <div class="about-icon">🍜</div>
+
       <h3>Banyak Pilihan</h3>
+
       <p>
         Mulai dari Risol Mayo, Baso Gemoy, Seblak,
         jajanan, gorengan hingga minuman.
       </p>
+
     </div>
 
     <div class="about-card">
+
       <div class="about-icon">💚</div>
+
       <h3>Kantin Sehat</h3>
+
       <p>
         Mengutamakan kebersihan dan kenyamanan
         dalam menyediakan jajanan.
       </p>
+
     </div>
 
     <div class="about-card">
+
       <div class="about-icon">📱</div>
+
       <h3>Pesan Mudah</h3>
+
       <p>
         Pilih menu melalui website kemudian
         lanjutkan pesanan melalui WhatsApp.
       </p>
+
     </div>
 
   </div>
+
 </section>
 
+<!-- =========================
+     LOCATION
+========================= -->
+
 <section id="lokasi">
+
   <div class="section-head">
+
     <div class="mini">Lokasi</div>
-    <h2>Kami Berada di SDN Sukasari</h2>
-    <p>Gunakan alamat resmi di bawah untuk menuju lokasi.</p>
+
+    <h2>
+      Kami Berada di SDN Sukasari
+    </h2>
+
+    <p>
+      Gunakan alamat resmi di bawah untuk menuju lokasi.
+    </p>
+
   </div>
 
   <div class="location-card">
-    <div class="location-icon">📍</div>
 
-    <h2>SDN SUKASARI</h2>
+    <div class="location-icon">
+      📍
+    </div>
+
+    <h2>
+      SDN SUKASARI
+    </h2>
 
     <div class="location-address">
+
       Jl. Galanggang RT 02 RW 16<br>
       Desa Galanggang, Batujajar<br>
       Kabupaten Bandung Barat<br>
       Jawa Barat<br>
       Kode Pos 40561
+
     </div>
 
     <div class="location-note">
-      ℹ️ Website ini menggunakan alamat yang diberikan untuk
-      Kantin Ibu Rezza dan tidak menampilkan peta yang berpotensi
-      menunjuk ke lokasi sekolah lain.
+
+      ℹ️ Website ini menggunakan alamat yang diberikan
+      untuk Kantin Ibu Rezza dan tidak menampilkan peta
+      yang berpotensi menunjuk ke lokasi sekolah lain.
+
     </div>
 
-    <a class="btn btn-yellow"
-       href="https://wa.me/6283162813311?text=Halo%20Ibu%20Rezza%2C%20mohon%20info%20petunjuk%20lokasi%20kantin."
-       target="_blank"
-       rel="noopener">
-      📍 Tanya Petunjuk Lokasi
+    <a
+      class="btn btn-yellow"
+      href="https://wa.me/6283162813311?text=Halo%20Ibu%20Rezza%2C%20mohon%20info%20petunjuk%20lokasi%20kantin."
+      target="_blank"
+      rel="noopener">
+
+      <!-- WhatsApp SVG -->
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="#25D366" d="M20.52 3.48A11.83 11.83 0 0 0 12.08 0C5.55 0 .24 5.31.24 11.84c0 2.09.55 4.13 1.59 5.93L.13 24l6.38-1.67a11.8 11.8 0 0 0 5.57 1.42h.01c6.52 0 11.83-5.31 11.83-11.84 0-3.16-1.23-6.13-3.4-8.43Z"/>
+        <path fill="#fff" d="M17.5 13.95c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.8-1.49-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+      </svg>
+
+      Tanya Petunjuk Lokasi
+
     </a>
+
   </div>
+
 </section>
 
+<!-- =========================
+     CONTACT
+========================= -->
+
 <section id="kontak">
+
   <div class="contact-box">
 
     <div>
-      <h2>Pesan Jajanan Sekarang 🍜</h2>
+
+      <h2>
+        Pesan Jajanan Sekarang
+      </h2>
+
       <p>
         Hubungi Kantin Ibu Rezza melalui WhatsApp
         atau email.
       </p>
+
     </div>
 
     <div class="contact-buttons">
 
-      <a class="contact-btn"
-         href="https://wa.me/6283162813311?text=Halo%20Ibu%20Rezza%2C%20saya%20ingin%20memesan%20jajanan."
-         target="_blank"
-         rel="noopener">
-        💬 0831-6281-3311
+      <a
+        class="contact-btn"
+        href="https://wa.me/6283162813311?text=Halo%20Ibu%20Rezza%2C%20saya%20ingin%20memesan%20jajanan."
+        target="_blank"
+        rel="noopener">
+
+        <!-- WhatsApp SVG -->
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="#25D366" d="M20.52 3.48A11.83 11.83 0 0 0 12.08 0C5.55 0 .24 5.31.24 11.84c0 2.09.55 4.13 1.59 5.93L.13 24l6.38-1.67a11.8 11.8 0 0 0 5.57 1.42h.01c6.52 0 11.83-5.31 11.83-11.84 0-3.16-1.23-6.13-3.4-8.43Z"/>
+          <path fill="#fff" d="M17.5 13.95c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.8-1.49-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+        </svg>
+
+        0831-6281-3311
+
       </a>
 
-      <a class="contact-btn"
-         href="mailto:desirahmiati87@gmail.com">
-        ✉️ Email
+      <a
+        class="contact-btn"
+        href="mailto:desirahmiati87@gmail.com">
+
+        <!-- Email SVG -->
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="3" fill="#EA4335"/>
+          <path fill="#fff" d="m4.5 7 7.5 5.7L19.5 7v2.2L12 14.9 4.5 9.2V7Z"/>
+        </svg>
+
+        Email
+
       </a>
 
     </div>
 
   </div>
+
 </section>
 
 </main>
 
-<!-- CART PANEL -->
+<!-- =========================
+     CART PANEL
+========================= -->
+
 <div class="cart-panel" id="cartPanel">
 
   <div class="cart-head">
-    <h3>🛒 Keranjang</h3>
-    <button class="close-cart" onclick="toggleCart()">✕</button>
+
+    <h3>
+      🛒 Keranjang
+    </h3>
+
+    <button
+      class="close-cart"
+      onclick="toggleCart()"
+      type="button">
+      ✕
+    </button>
+
   </div>
 
   <div id="cartItems"></div>
 
   <div class="cart-total">
-    <span>Total</span>
-    <span id="cartTotal">Rp0</span>
+
+    <span>
+      Total
+    </span>
+
+    <span id="cartTotal">
+      Rp0
+    </span>
+
   </div>
 
-  <button class="checkout" onclick="checkoutWhatsApp()">
-    💬 Pesan via WhatsApp
+  <button
+    class="checkout"
+    onclick="checkoutWhatsApp()"
+    type="button">
+
+    <!-- WhatsApp SVG -->
+    <svg
+      class="icon"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      style="vertical-align:middle;margin-right:5px;">
+
+      <path fill="#fff" d="M20.52 3.48A11.83 11.83 0 0 0 12.08 0C5.55 0 .24 5.31.24 11.84c0 2.09.55 4.13 1.59 5.93L.13 24l6.38-1.67a11.8 11.8 0 0 0 5.57 1.42h.01c6.52 0 11.83-5.31 11.83-11.84 0-3.16-1.23-6.13-3.4-8.43Z"/>
+      <path fill="#25D366" d="M17.5 13.95c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.8-1.49-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+
+    </svg>
+
+    Pesan via WhatsApp
+
   </button>
 
 </div>
 
-<button class="cart-float"
-        onclick="toggleCart()"
-        aria-label="Buka keranjang">
+<!-- =========================
+     FLOATING CART
+========================= -->
+
+<button
+  class="cart-float"
+  onclick="toggleCart()"
+  aria-label="Buka keranjang"
+  type="button">
+
   🛒
-  <span class="cart-count" id="cartCount">0</span>
+
+  <span
+    class="cart-count"
+    id="cartCount">
+    0
+  </span>
+
 </button>
 
-<!-- INSTALL BANNER -->
-<div class="install-banner" id="installBanner">
+<!-- =========================
+     PWA INSTALL BANNER
+========================= -->
+
+<div
+  class="install-banner"
+  id="installBanner">
 
   <div>
-    <strong>📱 Install Kantin Ibu Rezza</strong>
-    <small>Akses lebih cepat dari layar HP.</small>
+
+    <strong>
+      📱 Install Kantin Ibu Rezza
+    </strong>
+
+    <small>
+      Akses lebih cepat dari layar HP.
+    </small>
+
+    <div
+      class="manual-install"
+      id="manualInstall">
+
+      Jika tombol install otomatis tidak muncul:
+      buka menu browser <b>⋮</b> lalu pilih
+      <b>Tambahkan ke layar utama</b> atau
+      <b>Install aplikasi</b>.
+
+    </div>
+
   </div>
 
   <div class="install-actions">
-    <button class="install-now" id="installNow">
+
+    <button
+      class="install-now"
+      id="installNow"
+      type="button">
       Install
     </button>
 
-    <button class="install-close" id="installClose">
+    <button
+      class="install-close"
+      id="installClose"
+      type="button">
       ✕
     </button>
+
   </div>
 
 </div>
 
-<div class="toast" id="toast"></div>
+<!-- =========================
+     TOAST
+========================= -->
+
+<div
+  class="toast"
+  id="toast">
+</div>
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
-  <img src="LOGO-PREVIEW-KANTIN.jpg" alt="Kantin Ibu Rezza">
+
+  <img
+    src="LOGO-PREVIEW-KANTIN.jpg"
+    alt="Kantin Ibu Rezza">
 
   <p>
-    <strong>Kantin Sehat Ibu Rezza</strong>
+    <strong>
+      Kantin Sehat Ibu Rezza
+    </strong>
   </p>
 
   <p>
@@ -1411,121 +1913,209 @@ footer p{
   </p>
 
   <p>
-    Desa Galanggang, Batujajar • Kabupaten Bandung Barat • Jawa Barat 40561
+    Desa Galanggang, Batujajar •
+    Kabupaten Bandung Barat • Jawa Barat 40561
   </p>
 
   <p style="margin-top:10px;">
-    © <span id="year"></span> Kantin Sehat Ibu Rezza
+    © <span id="year"></span>
+    Kantin Sehat Ibu Rezza
   </p>
+
 </footer>
 
 <script>
-/* =========================
-   DATA
-========================= */
+
+/* =====================================================
+   KONTAK
+===================================================== */
 
 const WA_NUMBER = "6283162813311";
 
+const TIKTOK_URL =
+  "https://www.tiktok.com/@kantiniburezza113";
+
+const EMAIL =
+  "desirahmiati87@gmail.com";
+
+
+/* =====================================================
+   CART
+===================================================== */
+
 let cart = JSON.parse(
-  localStorage.getItem("kantin_ibu_rezza_cart") || "[]"
+  localStorage.getItem(
+    "kantin_ibu_rezza_cart"
+  ) || "[]"
 );
 
-/* =========================
-   FORMAT RUPIAH
-========================= */
+
+/* =====================================================
+   RUPIAH
+===================================================== */
 
 function rupiah(number){
-  return new Intl.NumberFormat("id-ID",{
-    style:"currency",
-    currency:"IDR",
-    maximumFractionDigits:0
-  }).format(number);
+
+  return new Intl.NumberFormat(
+    "id-ID",
+    {
+      style:"currency",
+      currency:"IDR",
+      maximumFractionDigits:0
+    }
+  ).format(number);
+
 }
 
-/* =========================
+
+/* =====================================================
    TOAST
-========================= */
+===================================================== */
 
 let toastTimer;
 
 function showToast(message){
-  const toast = document.getElementById("toast");
+
+  const toast =
+    document.getElementById("toast");
 
   toast.textContent = message;
+
   toast.classList.add("show");
 
   clearTimeout(toastTimer);
 
-  toastTimer = setTimeout(()=>{
-    toast.classList.remove("show");
-  },2200);
+  toastTimer =
+    setTimeout(
+      ()=>{
+        toast.classList.remove("show");
+      },
+      2200
+    );
+
 }
 
-/* =========================
-   CART
-========================= */
+
+/* =====================================================
+   SAVE CART
+===================================================== */
 
 function saveCart(){
+
   localStorage.setItem(
     "kantin_ibu_rezza_cart",
     JSON.stringify(cart)
   );
+
 }
+
+
+/* =====================================================
+   ADD CART
+===================================================== */
 
 function addToCart(name,price){
 
-  const existing = cart.find(item => item.name === name);
+  const existing =
+    cart.find(
+      item => item.name === name
+    );
 
   if(existing){
+
     existing.qty++;
+
   }else{
+
     cart.push({
       name:name,
       price:price,
       qty:1
     });
+
   }
 
   saveCart();
+
   renderCart();
 
-  document.getElementById("cartPanel").classList.add("show");
+  document
+    .getElementById("cartPanel")
+    .classList.add("show");
 
-  showToast(name + " masuk keranjang 🛒");
+  showToast(
+    name + " masuk keranjang 🛒"
+  );
+
 }
+
+
+/* =====================================================
+   CHANGE QTY
+===================================================== */
 
 function changeQty(index,change){
 
-  if(!cart[index]) return;
+  if(!cart[index]){
+    return;
+  }
 
   cart[index].qty += change;
 
   if(cart[index].qty <= 0){
+
     cart.splice(index,1);
+
   }
 
   saveCart();
+
   renderCart();
+
 }
+
+
+/* =====================================================
+   RENDER CART
+===================================================== */
 
 function renderCart(){
 
-  const items = document.getElementById("cartItems");
-  const count = document.getElementById("cartCount");
-  const totalElement = document.getElementById("cartTotal");
+  const items =
+    document.getElementById("cartItems");
 
-  const totalQty = cart.reduce(
-    (sum,item)=>sum + item.qty,
-    0
-  );
+  const count =
+    document.getElementById("cartCount");
 
-  const total = cart.reduce(
-    (sum,item)=>sum + (item.price * item.qty),
-    0
-  );
+  const totalElement =
+    document.getElementById("cartTotal");
 
-  count.textContent = totalQty;
-  totalElement.textContent = rupiah(total);
+
+  const totalQty =
+    cart.reduce(
+      (sum,item)=>
+        sum + item.qty,
+      0
+    );
+
+
+  const total =
+    cart.reduce(
+      (sum,item)=>
+        sum + (
+          item.price *
+          item.qty
+        ),
+      0
+    );
+
+
+  count.textContent =
+    totalQty;
+
+  totalElement.textContent =
+    rupiah(total);
+
 
   if(cart.length === 0){
 
@@ -1541,82 +2131,143 @@ function renderCart(){
     return;
   }
 
-  items.innerHTML = cart.map((item,index)=>`
 
-    <div class="cart-item">
+  items.innerHTML =
+    cart.map(
+      (item,index)=>`
 
-      <div>
-        <div class="cart-item-name">
-          ${escapeHtml(item.name)}
+        <div class="cart-item">
+
+          <div>
+
+            <div class="cart-item-name">
+              ${escapeHtml(item.name)}
+            </div>
+
+            <div class="cart-item-price">
+              ${rupiah(item.price)}
+            </div>
+
+            <div class="qty">
+
+              <button
+                onclick="changeQty(${index},-1)"
+                type="button">
+                −
+              </button>
+
+              <strong>
+                ${item.qty}
+              </strong>
+
+              <button
+                onclick="changeQty(${index},1)"
+                type="button">
+                +
+              </button>
+
+            </div>
+
+          </div>
+
+          <strong>
+            ${rupiah(
+              item.price *
+              item.qty
+            )}
+          </strong>
+
         </div>
 
-        <div class="cart-item-price">
-          ${rupiah(item.price)}
-        </div>
+      `
+    ).join("");
 
-        <div class="qty">
-          <button onclick="changeQty(${index},-1)">−</button>
-          <strong>${item.qty}</strong>
-          <button onclick="changeQty(${index},1)">+</button>
-        </div>
-      </div>
-
-      <strong>
-        ${rupiah(item.price * item.qty)}
-      </strong>
-
-    </div>
-
-  `).join("");
 }
 
+
+/* =====================================================
+   TOGGLE CART
+===================================================== */
+
 function toggleCart(){
+
   document
     .getElementById("cartPanel")
     .classList.toggle("show");
+
 }
+
+
+/* =====================================================
+   WHATSAPP CHECKOUT
+===================================================== */
 
 function checkoutWhatsApp(){
 
   if(cart.length === 0){
-    showToast("Keranjang masih kosong.");
+
+    showToast(
+      "Keranjang masih kosong."
+    );
+
     return;
   }
+
 
   let message =
     "Halo Ibu Rezza, saya ingin memesan:%0A%0A";
 
-  cart.forEach((item,index)=>{
-    message +=
-      (index + 1) +
-      ". " +
-      item.name +
-      " x" +
-      item.qty +
-      " = " +
-      rupiah(item.price * item.qty) +
-      "%0A";
-  });
 
-  const total = cart.reduce(
-    (sum,item)=>sum + item.price * item.qty,
-    0
+  cart.forEach(
+    (item,index)=>{
+
+      message +=
+        (index + 1) +
+        ". " +
+        item.name +
+        " x" +
+        item.qty +
+        " = " +
+        rupiah(
+          item.price *
+          item.qty
+        ) +
+        "%0A";
+
+    }
   );
+
+
+  const total =
+    cart.reduce(
+      (sum,item)=>
+        sum +
+        item.price *
+        item.qty,
+      0
+    );
+
 
   message +=
     "%0ATotal: " +
     rupiah(total) +
     "%0A%0AMohon info ketersediaannya. Terima kasih.";
 
+
   window.open(
-    "https://wa.me/" + WA_NUMBER + "?text=" + message,
+    "https://wa.me/" +
+    WA_NUMBER +
+    "?text=" +
+    message,
     "_blank"
   );
+
 }
 
-/* =========================
-   SECURITY / HTML
-========================= */
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
 
 function escapeHtml(value){
 
@@ -1626,25 +2277,47 @@ function escapeHtml(value){
     .replace(/>/g,"&gt;")
     .replace(/"/g,"&quot;")
     .replace(/'/g,"&#039;");
+
 }
 
-/* =========================
+
+/* =====================================================
    PWA INSTALL
-========================= */
+===================================================== */
 
 let deferredPrompt = null;
 
 const installTop =
-  document.getElementById("installTop");
+  document.getElementById(
+    "installTop"
+  );
 
 const installBanner =
-  document.getElementById("installBanner");
+  document.getElementById(
+    "installBanner"
+  );
 
 const installNow =
-  document.getElementById("installNow");
+  document.getElementById(
+    "installNow"
+  );
 
 const installClose =
-  document.getElementById("installClose");
+  document.getElementById(
+    "installClose"
+  );
+
+const manualInstall =
+  document.getElementById(
+    "manualInstall"
+  );
+
+
+/*
+  Chrome akan mengirim event ini
+  jika website memenuhi kondisi
+  instalasi PWA.
+*/
 
 window.addEventListener(
   "beforeinstallprompt",
@@ -1654,36 +2327,105 @@ window.addEventListener(
 
     deferredPrompt = event;
 
-    installTop.style.display = "block";
-    installBanner.classList.add("show");
+    installTop.style.display =
+      "block";
+
+    installBanner.classList.add(
+      "show"
+    );
+
+    manualInstall.classList.remove(
+      "show"
+    );
+
   }
 );
+
+
+/*
+  Jika event belum tersedia,
+  tetap berikan tombol Install.
+*/
+
+function showManualInstall(){
+
+  installBanner.classList.add(
+    "show"
+  );
+
+  manualInstall.classList.add(
+    "show"
+  );
+
+}
+
+
+/*
+  Proses install.
+*/
 
 async function installApp(){
 
   if(!deferredPrompt){
 
+    showManualInstall();
+
     showToast(
-      "Gunakan menu browser → Tambahkan ke layar utama."
+      "Buka menu ⋮ browser lalu pilih Install aplikasi."
     );
 
     return;
   }
 
+
   deferredPrompt.prompt();
 
-  const result =
-    await deferredPrompt.userChoice;
 
-  if(result.outcome === "accepted"){
-    showToast("Aplikasi sedang dipasang 📱");
+  try{
+
+    const result =
+      await deferredPrompt.userChoice;
+
+
+    if(result.outcome === "accepted"){
+
+      showToast(
+        "Aplikasi sedang dipasang 📱"
+      );
+
+    }else{
+
+      showToast(
+        "Install dibatalkan."
+      );
+
+    }
+
+  }catch(error){
+
+    console.log(
+      "Install prompt error:",
+      error
+    );
+
   }
+
 
   deferredPrompt = null;
 
-  installTop.style.display = "none";
-  installBanner.classList.remove("show");
+  installTop.style.display =
+    "none";
+
+  installBanner.classList.remove(
+    "show"
+  );
+
 }
+
+
+/*
+  Tombol desktop/mobile.
+*/
 
 installTop.addEventListener(
   "click",
@@ -1695,59 +2437,144 @@ installNow.addEventListener(
   installApp
 );
 
+
+/*
+  Tutup banner.
+*/
+
 installClose.addEventListener(
   "click",
   ()=>{
-    installBanner.classList.remove("show");
+    installBanner.classList.remove(
+      "show"
+    );
   }
 );
+
+
+/*
+  Jika aplikasi berhasil terinstall.
+*/
 
 window.addEventListener(
   "appinstalled",
   ()=>{
-    installTop.style.display = "none";
-    installBanner.classList.remove("show");
 
-    showToast("Kantin Ibu Rezza berhasil di-install 🎉");
+    installTop.style.display =
+      "none";
+
+    installBanner.classList.remove(
+      "show"
+    );
+
+    showToast(
+      "Kantin Ibu Rezza berhasil di-install 🎉"
+    );
+
   }
 );
 
-/* =========================
+
+/* =====================================================
    SERVICE WORKER
-========================= */
+===================================================== */
 
-if("serviceWorker" in navigator){
+if(
+  "serviceWorker" in navigator
+){
 
-  window.addEventListener("load",()=>{
+  window.addEventListener(
+    "load",
+    ()=>{
 
-    navigator.serviceWorker
-      .register("./sw.js")
-      .then(()=>{
-        console.log("ALFA PWA: Service Worker aktif.");
-      })
-      .catch(error=>{
-        console.log(
-          "Service Worker gagal:",
-          error
+      navigator.serviceWorker
+        .register(
+          "./sw.js",
+          {
+            scope:"./"
+          }
+        )
+        .then(
+          registration => {
+
+            console.log(
+              "Kantin Ibu Rezza PWA aktif:",
+              registration.scope
+            );
+
+          }
+        )
+        .catch(
+          error => {
+
+            console.error(
+              "Service Worker gagal:",
+              error
+            );
+
+          }
         );
-      });
 
-  });
+    }
+  );
 
 }
 
-/* =========================
-   YEAR
-========================= */
 
-document.getElementById("year").textContent =
+/* =====================================================
+   YEAR
+===================================================== */
+
+document.getElementById(
+  "year"
+).textContent =
   new Date().getFullYear();
 
-/* =========================
-   START
-========================= */
+
+/* =====================================================
+   INITIAL CART
+===================================================== */
 
 renderCart();
+
+
+/* =====================================================
+   PWA STATUS CHECK
+===================================================== */
+
+window.addEventListener(
+  "load",
+  ()=>{
+
+    setTimeout(
+      ()=>{
+
+        /*
+          Jika browser tidak mengeluarkan
+          beforeinstallprompt, banner manual
+          tidak langsung dipaksa muncul agar
+          website tetap bersih.
+        */
+
+        if(
+          !deferredPrompt &&
+          window.matchMedia(
+            "(display-mode: standalone)"
+          ).matches
+        ){
+
+          installTop.style.display =
+            "none";
+
+        }
+
+      },
+      1500
+    );
+
+  }
+);
+
 </script>
 
 </body>
